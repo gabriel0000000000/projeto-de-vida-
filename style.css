@@ -1,10 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+:root {
+
+    --preto: #050505;
+    --preto2: #0b0b0b;
+    --cinza: #151515;
+
+    --branco: #f5f5f5;
+    --cinza-texto: #a8a8a8;
+
+    --verde: #b7ff00;
+    --verde2: #72a800;
+
+    --borda: rgba(183,255,0,.35);
+
 }
 
 
@@ -17,240 +31,283 @@ body {
 
     min-height: 100vh;
 
-    padding: 60px 20px;
+    padding: 35px 20px 70px;
 
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 
-    color: #eeeeee;
-
-    overflow-x: hidden;
+    color: var(--branco);
 
     background:
 
         radial-gradient(
-            circle at 50% 10%,
-            rgba(100,100,100,.15),
-            transparent 25%
+            circle at 50% -10%,
+            rgba(183,255,0,.12),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 10% 80%,
-            rgba(120,0,0,.18),
+            circle at 0% 100%,
+            rgba(183,255,0,.08),
             transparent 30%
         ),
 
         linear-gradient(
             135deg,
-            #030303,
-            #111111 45%,
-            #050505
+            #020202,
+            #101010 50%,
+            #030303
         );
 
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* =====================================
+   TEXTURA
+===================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: .18;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+}
+
+
+/* =====================================
    TEIAS
-========================= */
+===================================== */
 
 .teia {
 
     position: fixed;
 
-    z-index: 0;
+    width: 350px;
+    height: 350px;
 
-    color: rgba(255,255,255,.08);
-
-    font-size: 90px;
-
-    letter-spacing: 15px;
+    opacity: .12;
 
     pointer-events: none;
 
+    z-index: 0;
 }
 
 
 .teia1 {
 
-    top: -25px;
-    left: -40px;
+    top: -120px;
+    left: -100px;
 
-    transform: rotate(-15deg);
+    border-radius: 50%;
+
+    background:
+
+        repeating-radial-gradient(
+            circle,
+            transparent 0 28px,
+            #fff 29px 30px
+        );
 
 }
 
 
 .teia2 {
 
-    bottom: -20px;
-    right: -50px;
+    right: -120px;
+    bottom: -120px;
 
-    transform: rotate(15deg);
+    border-radius: 50%;
+
+    background:
+
+        repeating-radial-gradient(
+            circle,
+            transparent 0 28px,
+            var(--verde) 29px 30px
+        );
 
 }
 
 
-/* =========================
+/* =====================================
    GOSMA
-========================= */
+===================================== */
 
 .gosma {
 
     position: fixed;
 
-    z-index: 0;
+    width: 180px;
 
-    background: #080808;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(183,255,0,.5),
+            rgba(40,70,0,.1)
+        );
 
-    border: 2px solid #222;
+    filter: blur(2px);
 
-    filter: blur(.5px);
+    opacity: .35;
+
+    pointer-events: none;
 
 }
 
 
 .gosma1 {
 
-    width: 180px;
-    height: 300px;
+    height: 320px;
 
-    top: -100px;
-    left: 8%;
+    top: -80px;
+    left: 8px;
 
-    border-radius:
-        40% 60% 55% 45% /
-        55% 40% 60% 45%;
-
-    transform: rotate(20deg);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        85% 35%,
+        70% 45%,
+        62% 100%,
+        48% 52%,
+        35% 40%,
+        20% 65%,
+        10% 35%
+    );
 
 }
 
 
 .gosma2 {
 
-    width: 130px;
-    height: 230px;
+    height: 250px;
 
-    right: 7%;
-    top: -80px;
+    right: 20px;
+    top: 20%;
 
-    border-radius:
-        60% 40% 45% 55%;
-
-    transform: rotate(-20deg);
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 45%,
+        82% 35%,
+        70% 100%,
+        58% 42%,
+        40% 55%,
+        25% 35%,
+        0 60%
+    );
 
 }
 
 
 .gosma3 {
 
-    width: 160px;
-    height: 200px;
+    height: 180px;
 
-    bottom: -100px;
-    left: 20%;
+    bottom: 0;
+    left: 45%;
 
-    border-radius: 50%;
+    opacity: .2;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        90% 55%,
+        75% 40%,
+        60% 100%,
+        48% 42%,
+        30% 70%,
+        15% 35%
+    );
 
 }
 
 
-/* =========================
-   ARANHAS
-========================= */
+/* =====================================
+   TENTÁCULOS
+===================================== */
 
-.aranha {
+.tentaculo {
 
     position: fixed;
 
-    z-index: 1;
+    width: 250px;
+    height: 15px;
 
-    font-size: 45px;
+    border-radius: 100%;
 
-    opacity: .55;
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--verde),
+            transparent
+        );
 
-    animation: aranha 5s ease-in-out infinite;
+    opacity: .12;
 
-}
+    filter: blur(3px);
 
-
-.aranha1 {
-
-    top: 15%;
-    left: 5%;
-
-}
-
-
-.aranha2 {
-
-    bottom: 12%;
-    right: 5%;
-
-    animation-delay: 2s;
+    pointer-events: none;
 
 }
 
 
-@keyframes aranha {
+.tentaculo1 {
 
-    0%, 100% {
-        transform: translateY(0);
-    }
+    left: -80px;
+    top: 48%;
 
-    50% {
-        transform: translateY(18px);
-    }
+    transform:
+        rotate(25deg);
 
 }
 
 
-/* =========================
-   PAINEL
-========================= */
+.tentaculo2 {
 
-.painel {
+    right: -80px;
+    top: 62%;
 
-    position: relative;
+    transform:
+        rotate(-25deg);
 
-    z-index: 5;
+}
 
-    width: 850px;
+
+/* =====================================
+   TOPO
+===================================== */
+
+.topo {
+
+    width: 1100px;
 
     max-width: 100%;
 
     margin: auto;
-
-    padding: 30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #151515,
-            #080808
-        );
-
-    border: 2px solid #333;
-
-    border-radius: 20px;
-
-    box-shadow:
-
-        0 0 0 5px rgba(255,255,255,.02),
-
-        0 25px 70px rgba(0,0,0,.8),
-
-        0 0 45px rgba(110,0,0,.15);
-
-}
-
-
-/* =========================
-   CABEÇALHO
-========================= */
-
-.cabecalho {
 
     display: flex;
 
@@ -258,29 +315,62 @@ body {
 
     align-items: center;
 
-    margin-bottom: 25px;
+    padding: 10px 5px 25px;
 
-    padding-bottom: 15px;
+}
 
-    border-bottom: 1px solid #292929;
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.logo-venom {
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 46px;
+
+    letter-spacing: 5px;
+
+    color: white;
+
+    text-shadow:
+
+        3px 3px 0 #000,
+
+        0 0 15px rgba(183,255,0,.35);
+
+}
+
+
+.linha-logo {
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    color: var(--verde);
 
 }
 
 
 .status {
 
-    color: #ddd;
-
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 12px;
+    font-size: 9px;
 
     letter-spacing: 2px;
+
+    color: #aaa;
 
 }
 
 
-.bolinha {
+.online {
 
     display: inline-block;
 
@@ -291,38 +381,62 @@ body {
 
     border-radius: 50%;
 
-    background: #b30000;
+    background: var(--verde);
 
-    box-shadow: 0 0 10px #ff0000;
+    box-shadow:
+        0 0 10px var(--verde);
 
-    animation: pulsar 1.5s infinite;
-
-}
-
-
-@keyframes pulsar {
-
-    50% {
-        opacity: .3;
-    }
+    animation:
+        pulsar 1.5s infinite;
 
 }
 
 
-.codigo {
+/* =====================================
+   CONTAINER
+===================================== */
 
-    color: #777;
+.game-container {
 
-    font-size: 11px;
+    position: relative;
 
-    letter-spacing: 2px;
+    z-index: 2;
+
+    width: 900px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+    padding: 25px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(22,22,22,.97),
+            rgba(5,5,5,.98)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+
+        0 0 0 1px rgba(183,255,0,.05),
+
+        0 25px 80px rgba(0,0,0,.8),
+
+        inset 0 0 60px rgba(183,255,0,.025);
 
 }
 
 
-/* =========================
+/* =====================================
    PERFIL
-========================= */
+===================================== */
 
 .perfil {
 
@@ -330,15 +444,36 @@ body {
 
     align-items: center;
 
-    gap: 35px;
+    gap: 22px;
 
-    padding: 20px;
+    padding: 22px;
+
+    background: #090909;
 
     border: 1px solid #292929;
 
-    border-radius: 15px;
+    position: relative;
 
-    background: #0d0d0d;
+    overflow: hidden;
+
+}
+
+
+.perfil::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    right: -50px;
+    top: -60px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(183,255,0,.2);
 
 }
 
@@ -347,22 +482,10 @@ body {
 
     position: relative;
 
-    width: 230px;
-    height: 230px;
+    width: 125px;
+    height: 125px;
 
     flex-shrink: 0;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-
-    border: 4px solid #ddd;
-
-    box-shadow:
-
-        0 0 0 5px #1b1b1b,
-
-        0 0 30px rgba(180,0,0,.4);
 
 }
 
@@ -374,175 +497,282 @@ body {
 
     object-fit: cover;
 
-    display: block;
+    border-radius: 50%;
+
+    border: 3px solid var(--verde);
+
+    filter:
+        grayscale(.15)
+        contrast(1.15);
+
+    box-shadow:
+
+        0 0 0 5px #080808,
+
+        0 0 25px rgba(183,255,0,.25);
 
 }
 
 
-.informacoes {
+/* olhos decorativos */
+
+.olho {
+
+    position: absolute;
+
+    width: 35px;
+    height: 18px;
+
+    background: white;
+
+    z-index: 3;
+
+    opacity: .9;
+
+    border-radius: 100% 0;
+
+    transform: rotate(25deg);
+
+    filter:
+        drop-shadow(0 0 4px white);
+
+}
+
+
+.olho-esquerdo {
+
+    top: -4px;
+    left: 20px;
+
+}
+
+
+.olho-direito {
+
+    top: -4px;
+    right: 20px;
+
+    transform:
+        rotate(-25deg);
+
+}
+
+
+.perfil-info {
 
     flex: 1;
 
 }
 
 
-.mini-titulo {
+.tag {
 
-    color: #888;
-
-    font-size: 11px;
+    font-size: 8px;
 
     letter-spacing: 3px;
 
-}
-
-
-h1 {
-
-    margin-top: 4px;
-
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 65px;
-
-    line-height: .9;
-
-    color: white;
-
-    letter-spacing: 5px;
-
-    text-shadow:
-        3px 3px 0 #111,
-        0 0 18px rgba(255,255,255,.15);
+    color: var(--verde);
 
 }
 
 
-.informacoes h2 {
+.perfil-info h1 {
 
-    margin-top: 8px;
+    margin: 5px 0;
 
-    color: #b40000;
+    font-family: 'Bebas Neue', sans-serif;
 
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 25px;
-
-    letter-spacing: 6px;
-
-}
-
-
-.informacoes h2 span {
-
-    color: #777;
-
-}
-
-
-.descricao {
-
-    max-width: 450px;
-
-    margin-top: 15px;
-
-    color: #999;
-
-    line-height: 1.6;
-
-}
-
-
-.barra-status {
-
-    margin-top: 20px;
-
-}
-
-
-.status-item {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-top: 7px;
-
-    color: #777;
-
-    font-size: 10px;
-
-}
-
-
-.status-item strong {
-
-    color: #eee;
-
-    letter-spacing: 2px;
-
-}
-
-
-/* =========================
-   TÍTULO
-========================= */
-
-.titulo-secao {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    margin: 35px 0 20px;
-
-    text-align: center;
-
-}
-
-
-.titulo-secao > span {
-
-    color: #777;
-
-}
-
-
-.titulo-secao small {
-
-    color: #777;
-
-    font-size: 9px;
+    font-size: 48px;
 
     letter-spacing: 4px;
 
 }
 
 
-.titulo-secao h3 {
+.perfil-info p {
 
-    margin-top: 3px;
+    color: #888;
 
-    color: white;
+    font-size: 10px;
 
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 25px;
-
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 
 }
 
 
-/* =========================
-   MISSÕES
-========================= */
+.perfil-info small {
 
-.missoes {
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.barra-status {
+
+    width: 100%;
+    max-width: 350px;
+
+    height: 5px;
+
+    margin: 13px 0 7px;
+
+    background: #222;
+
+}
+
+
+.barra-status span {
+
+    display: block;
+
+    width: 76%;
+
+    height: 100%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 10px var(--verde);
+
+}
+
+
+.nivel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    border: 1px solid #333;
+
+}
+
+
+.nivel span {
+
+    color: #666;
+
+    font-size: 8px;
+
+}
+
+
+.nivel strong {
+
+    color: var(--verde);
+
+    font-family: 'Bebas Neue';
+
+    font-size: 35px;
+
+}
+
+
+/* =====================================
+   INTRODUÇÃO
+===================================== */
+
+.introducao {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 35px 0 22px;
+
+}
+
+
+.simbolo {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid var(--verde);
+
+    color: var(--verde);
+
+    font-size: 23px;
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.simbolo::first-letter {
+
+    transform:
+        rotate(-45deg);
+
+}
+
+
+.mini-titulo {
+
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.introducao h2 {
+
+    margin-top: 5px;
+
+    font-family: 'Bebas Neue';
+
+    font-size: 35px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.introducao h2 span {
+
+    color: var(--verde);
+
+}
+
+
+.introducao p {
+
+    margin-top: 4px;
+
+    color: #777;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================
+   MENU
+===================================== */
+
+.menu {
 
     display: flex;
 
@@ -553,27 +783,28 @@ h1 {
 }
 
 
-details {
+.card {
 
     overflow: hidden;
 
-    background: #101010;
+    background: #090909;
 
-    border: 1px solid #292929;
-
-    border-radius: 12px;
+    border: 1px solid #282828;
 
     transition: .25s;
 
 }
 
 
-details:hover {
+.card:hover {
 
-    border-color: #555;
+    border-color: rgba(183,255,0,.5);
 
-    transform: translateY(-2px);
+    transform:
+        translateX(3px);
 
+    box-shadow:
+        -4px 0 0 var(--verde);
 }
 
 
@@ -583,27 +814,34 @@ summary {
 
     align-items: center;
 
-    gap: 15px;
+    min-height: 78px;
 
-    padding: 16px;
+    padding: 13px 18px;
 
     cursor: pointer;
 
     list-style: none;
 
+    user-select: none;
+
 }
 
 
 summary::-webkit-details-marker {
-
     display: none;
-
 }
 
 
-/* =========================
-   ÍCONES
-========================= */
+.numero {
+
+    width: 40px;
+
+    color: #444;
+
+    font-size: 9px;
+
+}
+
 
 .icone {
 
@@ -615,20 +853,18 @@ summary::-webkit-details-marker {
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
-
-    border-radius: 10px;
-
-    background: #191919;
-
     border: 1px solid #333;
 
-    font-size: 23px;
+    background: #111;
+
+    font-size: 21px;
+
+    margin-right: 15px;
 
 }
 
 
-.texto-botao {
+.texto-card {
 
     display: flex;
 
@@ -639,105 +875,133 @@ summary::-webkit-details-marker {
 }
 
 
-.texto-botao strong {
+.texto-card strong {
 
-    color: #eee;
-
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 18px;
+    font-size: 12px;
 
     letter-spacing: 1px;
 
 }
 
 
-.texto-botao small {
+.texto-card small {
 
-    margin-top: 3px;
+    margin-top: 5px;
 
-    color: #777;
+    color: #555;
 
-}
-
-
-.abrir {
-
-    font-size: 25px;
-
-    color: #777;
-
-    transition: .3s;
-
-}
-
-
-details[open] .abrir {
-
-    transform: rotate(45deg);
-
-    color: #d00000;
-
-}
-
-
-/* =========================
-   CONTEÚDO
-========================= */
-
-.conteudo {
-
-    padding: 25px;
-
-    border-top: 1px solid #292929;
-
-    background:
-
-        radial-gradient(
-            circle at 100% 0,
-            rgba(120,0,0,.08),
-            transparent 35%
-        ),
-
-        #0b0b0b;
-
-    color: #aaa;
-
-    line-height: 1.7;
-
-}
-
-
-.tag {
-
-    display: inline-block;
-
-    padding: 5px 10px;
-
-    margin-bottom: 15px;
-
-    color: #aaa;
-
-    background: #171717;
-
-    border: 1px solid #333;
-
-    border-radius: 4px;
-
-    font-size: 10px;
+    font-size: 7px;
 
     letter-spacing: 2px;
 
 }
 
 
-.conteudo h4 {
+.abrir {
 
-    margin-bottom: 12px;
+    color: var(--verde);
 
-    color: white;
+    font-size: 25px;
 
-    font-family: 'Rajdhani', sans-serif;
+    transition: .3s;
+
+}
+
+
+.card[open] .abrir {
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* =====================================
+   CORES DOS CARDS
+===================================== */
+
+.enem summary {
+    border-left: 4px solid #78a8ff;
+}
+
+
+.faculdade summary {
+    border-left: 4px solid var(--verde);
+}
+
+
+.tempo summary {
+    border-left: 4px solid #c9c9c9;
+}
+
+
+.dinheiro summary {
+    border-left: 4px solid #d5b65c;
+}
+
+
+.planos summary {
+    border-left: 4px solid #9cff00;
+}
+
+
+.curriculo summary {
+    border-left: 4px solid white;
+}
+
+
+/* =====================================
+   CONTEÚDO
+===================================== */
+
+.conteudo {
+
+    padding: 25px 30px 30px;
+
+    border-top: 1px solid #222;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(183,255,0,.04),
+            transparent 30%
+        ),
+
+        #070707;
+
+}
+
+
+.terminal {
+
+    padding: 20px;
+
+    margin-bottom: 18px;
+
+    border-left: 2px solid var(--verde);
+
+    background: #0c0c0c;
+
+}
+
+
+.terminal span {
+
+    color: var(--verde);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.terminal h3 {
+
+    margin: 9px 0;
+
+    font-family: 'Bebas Neue';
 
     font-size: 25px;
 
@@ -746,75 +1010,173 @@ details[open] .abrir {
 }
 
 
-.conteudo p {
+.terminal p {
 
-    margin-bottom: 15px;
+    color: #888;
 
-}
+    font-size: 10px;
 
-
-ul {
-
-    padding-left: 22px;
+    line-height: 1.8;
 
 }
 
 
-li {
+/* =====================================
+   LISTA
+===================================== */
 
-    margin-bottom: 8px;
+.lista {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
 
 }
 
 
-li::marker {
+.lista div {
 
-    color: #b40000;
+    padding: 12px;
+
+    color: #888;
+
+    background: #0c0c0c;
+
+    border: 1px solid #1e1e1e;
+
+    font-size: 9px;
 
 }
 
 
-/* =========================
-   RECOMPENSA
-========================= */
+.lista b {
 
-.recompensa {
+    margin-right: 7px;
 
-    margin-top: 20px;
+    color: var(--verde);
 
-    padding: 15px;
+}
+
+
+/* =====================================
+   OBJETIVO
+===================================== */
+
+.objetivo {
+
+    margin-top: 18px;
+
+    padding: 17px;
 
     text-align: center;
 
-    color: #777;
+    background: #0d0d0d;
 
-    background: #101010;
-
-    border: 1px solid #333;
-
-    border-left: 3px solid #b00000;
+    border: 1px solid rgba(183,255,0,.25);
 
 }
 
 
-.recompensa strong {
+.objetivo span {
 
     display: block;
 
-    margin-top: 4px;
+    color: #555;
 
-    color: white;
+    font-size: 7px;
 
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 18px;
+    letter-spacing: 2px;
 
 }
 
 
-/* =========================
+.objetivo strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--verde);
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================
+   FINANCEIRO
+===================================== */
+
+.financeiro {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.financeiro div {
+
+    padding: 17px 10px;
+
+    text-align: center;
+
+    background: #0c0c0c;
+
+    border: 1px solid #292929;
+
+}
+
+
+.financeiro span {
+
+    display: block;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.financeiro strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--verde);
+
+    font-family: 'Bebas Neue';
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================
    SONHOS
-========================= */
+===================================== */
+
+.sonhos {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
 
 .sonho {
 
@@ -824,22 +1186,18 @@ li::marker {
 
     gap: 15px;
 
-    padding: 14px;
+    padding: 15px;
 
-    margin-top: 10px;
+    background: #0c0c0c;
 
-    background: #111;
-
-    border: 1px solid #292929;
-
-    border-radius: 8px;
+    border: 1px solid #252525;
 
 }
 
 
 .sonho > span {
 
-    font-size: 28px;
+    font-size: 25px;
 
 }
 
@@ -855,23 +1213,27 @@ li::marker {
 
 .sonho strong {
 
-    color: #eee;
+    font-size: 9px;
+
+    letter-spacing: 1px;
 
 }
 
 
 .sonho small {
 
-    color: #777;
+    margin-top: 4px;
 
-    margin-top: 3px;
+    color: #666;
+
+    font-size: 8px;
 
 }
 
 
-/* =========================
-   BOTÃO CURRÍCULO
-========================= */
+/* =====================================
+   CURRÍCULO
+===================================== */
 
 .botao-curriculo {
 
@@ -879,73 +1241,89 @@ li::marker {
 
     margin: 20px auto 0;
 
-    padding: 13px 25px;
+    padding: 14px 25px;
 
-    color: white;
+    color: #050505;
 
-    background: #161616;
+    background: var(--verde);
 
-    border: 1px solid #444;
+    border: none;
 
-    border-radius: 5px;
+    font-family: 'Orbitron';
 
-    font-family: 'Rajdhani', sans-serif;
+    font-size: 9px;
 
-    font-size: 15px;
+    font-weight: 900;
 
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 
     cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(183,255,0,.15);
+
+    transition: .2s;
 
 }
 
 
 .botao-curriculo:hover {
 
-    background: #7d0000;
+    transform:
+        translateY(-3px);
 
-    border-color: #b00000;
+    box-shadow:
+        0 0 25px rgba(183,255,0,.4);
 
 }
 
 
-/* =========================
+/* =====================================
    RODAPÉ
-========================= */
+===================================== */
 
 footer {
 
-    margin-top: 35px;
-
-    padding-top: 20px;
+    margin-top: 30px;
 
     text-align: center;
 
-    border-top: 1px solid #292929;
+}
+
+
+.linha-footer {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--verde),
+            transparent
+        );
 
 }
 
 
-.teia-footer {
+footer p {
 
-    color: #555;
+    color: #666;
 
-    margin-bottom: 10px;
+    font-size: 8px;
+
+    letter-spacing: 3px;
 
 }
 
 
-footer strong {
+footer p span {
 
-    display: block;
-
-    color: #ddd;
-
-    font-family: 'Rajdhani', sans-serif;
-
-    font-size: 22px;
-
-    letter-spacing: 5px;
+    color: var(--verde);
 
 }
 
@@ -954,83 +1332,227 @@ footer small {
 
     display: block;
 
-    margin-top: 5px;
+    margin-top: 9px;
 
-    color: #666;
+    color: #333;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
 
 }
 
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* =====================================
+   DETALHES
+===================================== */
+
+.canto {
+
+    position: fixed;
+
+    color: var(--verde);
+
+    opacity: .5;
+
+    font-size: 25px;
+
+    animation:
+        pulsar 2s infinite alternate;
+
+}
+
+
+.canto1 {
+
+    top: 45%;
+
+    left: 2%;
+
+}
+
+
+.canto2 {
+
+    right: 2%;
+
+    top: 30%;
+
+}
+
+
+/* =====================================
+   ANIMAÇÕES
+===================================== */
+
+@keyframes pulsar {
+
+    0% {
+        opacity: .35;
+        transform: scale(.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+}
+
+
+/* =====================================
+   CELULAR
+===================================== */
 
 @media (max-width: 700px) {
 
     body {
 
-        padding: 25px 10px;
+        padding:
+            15px 10px 40px;
 
     }
 
 
-    .painel {
+    .topo {
 
-        padding: 15px;
+        padding:
+            5px 3px 18px;
+
+    }
+
+
+    .logo-venom {
+
+        font-size: 34px;
+
+    }
+
+
+    .status {
+
+        font-size: 7px;
+
+    }
+
+
+    .game-container {
+
+        padding: 12px;
 
     }
 
 
     .perfil {
 
-        flex-direction: column;
-
-        text-align: center;
+        padding: 15px;
 
     }
 
 
     .foto-container {
 
-        width: 190px;
-        height: 190px;
+        width: 85px;
+        height: 85px;
 
     }
 
 
-    h1 {
+    .perfil-info h1 {
 
-        font-size: 50px;
-
-    }
-
-
-    .informacoes h2 {
-
-        font-size: 18px;
+        font-size: 35px;
 
     }
 
 
-    .status-item {
+    .perfil-info p {
 
-        flex-direction: column;
-
-        gap: 3px;
+        font-size: 7px;
 
     }
 
 
-    .teia {
+    .nivel {
 
         display: none;
 
     }
 
 
-    .aranha {
+    .introducao h2 {
 
-        font-size: 30px;
+        font-size: 28px;
+
+    }
+
+
+    .lista {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .financeiro {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    summary {
+
+        padding: 12px;
+
+    }
+
+
+    .numero {
+
+        width: 25px;
+
+        font-size: 7px;
+
+    }
+
+
+    .icone {
+
+        width: 40px;
+        height: 40px;
+
+        margin-right: 10px;
+
+        font-size: 18px;
+
+    }
+
+
+    .texto-card strong {
+
+        font-size: 9px;
+
+    }
+
+
+    .texto-card small {
+
+        font-size: 6px;
+
+    }
+
+
+    .conteudo {
+
+        padding: 18px;
+
+    }
+
+
+    .gosma2,
+    .tentaculo2 {
+
+        display: none;
 
     }
 
