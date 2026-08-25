@@ -188,3 +188,54 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+// ==========================================
+// LIFE SYSTEM // PAINEL INTERATIVO
+// ==========================================
+
+const lifeToggle = document.getElementById("lifeToggle");
+const lifePanel = document.getElementById("lifePanel");
+const lifeClose = document.getElementById("lifeClose");
+
+
+// ABRIR
+
+lifeToggle.addEventListener("click", () => {
+
+    lifePanel.classList.add("ativo");
+
+});
+
+
+// FECHAR
+
+lifeClose.addEventListener("click", () => {
+
+    lifePanel.classList.remove("ativo");
+
+});
+
+
+// ==========================================
+// MISSÕES
+// ==========================================
+
+const missionButtons =
+    document.querySelectorAll(".mission-btn");
+
+const systemMessage =
+    document.getElementById("systemMessage");
+
+
+missionButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const missao =
+            button.querySelector("span").textContent;
+
+        systemMessage.textContent =
+            `MISSÃO SELECIONADA: ${missao}. Continue avançando.`;
+
+    });
+
+});
