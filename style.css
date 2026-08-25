@@ -1,10 +1,10 @@
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 
-/* ==================================================
+/* =====================================================
    RESET
-================================================== */
+===================================================== */
 
 * {
     margin: 0;
@@ -22,205 +22,356 @@ body {
 
     min-height: 100vh;
 
-    padding: 55px 20px 70px;
+    padding: 45px 15px;
 
     overflow-x: hidden;
 
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 
-    color: #eeeeee;
+    color: #fff;
 
     background:
 
         radial-gradient(
-            circle at 50% -10%,
-            #4b0808 0%,
-            transparent 35%
+            ellipse at 50% 0%,
+            rgba(140,255,0,.10),
+            transparent 30%
         ),
 
         radial-gradient(
-            circle at 10% 70%,
-            rgba(180,0,0,.20),
+            ellipse at 0% 50%,
+            rgba(140,255,0,.06),
             transparent 25%
         ),
 
         linear-gradient(
             135deg,
-            #030303,
-            #0c0c0c 45%,
-            #170606 100%
+            #010101,
+            #080808 45%,
+            #020202
         );
 
 }
 
 
-/* ==================================================
-   TEXTURA DE TEIA
-================================================== */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    opacity: .18;
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            transparent 0,
-            transparent 55px,
-            rgba(255,255,255,.25) 56px,
-            transparent 58px
-        );
-
-    background-size: 120px 120px;
-
-}
-
-
-/* ==================================================
-   TEIAS
-================================================== */
+/* =====================================================
+   TEIAS GIGANTES
+===================================================== */
 
 .teia {
 
     position: fixed;
 
-    width: 260px;
-    height: 260px;
+    z-index: 0;
 
-    z-index: 1;
+    width: 360px;
+    height: 360px;
+
+    opacity: .18;
 
     pointer-events: none;
 
-    opacity: .35;
+    background:
+        repeating-conic-gradient(
+            from 0deg,
+            transparent 0deg 8deg,
+            #8cff00 9deg 10deg,
+            transparent 11deg 18deg
+        );
+
+    border-radius: 50%;
 
 }
 
 
-.teia1 {
+.teia::after {
 
-    top: -90px;
-    left: -80px;
+    content: "";
 
-    border-right: 3px solid #fff;
-    border-bottom: 3px solid #fff;
+    position: absolute;
 
-    border-radius: 0 0 100% 0;
+    inset: 30px;
+
+    border: 2px solid #8cff00;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 0 25px transparent,
+        0 0 0 27px rgba(140,255,0,.5),
+
+        0 0 0 60px transparent,
+        0 0 0 62px rgba(140,255,0,.35),
+
+        0 0 0 95px transparent,
+        0 0 0 97px rgba(140,255,0,.25);
 
 }
 
 
-.teia2 {
+.teia-esquerda {
 
-    right: -90px;
-    bottom: -90px;
-
-    border-left: 3px solid #fff;
-    border-top: 3px solid #fff;
-
-    border-radius: 100% 0 0 0;
+    left: -190px;
+    top: 80px;
 
 }
 
 
-/* ==================================================
-   OLHOS
-================================================== */
+.teia-direita {
 
-.olho {
+    right: -190px;
+    bottom: 20px;
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =====================================================
+   GOSMA ESCORRENDO
+===================================================== */
+
+.gosma {
 
     position: fixed;
 
     z-index: 1;
 
-    color: white;
+    width: 18px;
 
-    font-size: 90px;
+    background:
+        linear-gradient(
+            180deg,
+            #8cff00,
+            #3c8500
+        );
 
-    opacity: .08;
+    border-radius:
+        0 0 15px 15px;
 
-    transform: rotate(-20deg);
+    box-shadow:
+        0 0 15px rgba(140,255,0,.7);
 
-    pointer-events: none;
+    opacity: .55;
+
+    animation: dripping 4s ease-in-out infinite;
 
 }
 
 
-.olho1 {
-    top: 5%;
-    left: 2%;
+.gosma::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -12px;
+
+    left: -3px;
+
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #72d900;
+
+    box-shadow:
+        0 0 12px #8cff00;
+
 }
 
 
-.olho2 {
-    right: 2%;
-    bottom: 7%;
-
-    transform: rotate(20deg);
+.gosma1 {
+    height: 110px;
+    left: 7%;
+    top: 0;
 }
 
 
-/* ==================================================
-   SIMBIONTE
-================================================== */
+.gosma2 {
+    height: 75px;
+    right: 12%;
+    top: 0;
+    animation-delay: 1s;
+}
 
-.simbiote {
+
+.gosma3 {
+    height: 55px;
+    left: 22%;
+    bottom: 0;
+    animation-delay: 2s;
+}
+
+
+.gosma4 {
+    height: 90px;
+    right: 4%;
+    bottom: 0;
+    animation-delay: 3s;
+}
+
+
+@keyframes dripping {
+
+    0%,100% {
+        transform: scaleY(.9);
+    }
+
+    50% {
+        transform: scaleY(1.08);
+    }
+
+}
+
+
+/* =====================================================
+   TENTÁCULOS
+===================================================== */
+
+.tentaculo {
 
     position: fixed;
 
     z-index: 1;
 
-    width: 150px;
-    height: 450px;
+    width: 180px;
+    height: 18px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,0,0,.12),
-            transparent
+            #8cff00,
+            #142600
         );
 
-    filter: blur(10px);
+    border-radius: 100%;
+
+    filter:
+        blur(.3px)
+        drop-shadow(0 0 8px #8cff00);
+
+    opacity: .2;
 
     pointer-events: none;
 
 }
 
 
-.simbiote1 {
+.tentaculo1 {
 
-    left: -80px;
-    top: 20%;
+    left: -50px;
+    top: 35%;
 
-    transform: rotate(15deg);
+    transform:
+        rotate(25deg);
 }
 
 
-.simbiote2 {
+.tentaculo2 {
 
-    right: -80px;
-    bottom: 20%;
+    right: -60px;
+    top: 62%;
 
-    transform: rotate(-15deg);
+    transform:
+        rotate(-30deg);
 }
 
 
-/* ==================================================
-   CONTAINER
-================================================== */
+.tentaculo3 {
 
-.container {
+    left: 15%;
+    bottom: 4%;
+
+    transform:
+        rotate(-10deg);
+
+    width: 120px;
+
+}
+
+
+/* =====================================================
+   PARTÍCULAS
+===================================================== */
+
+.particula {
+
+    position: fixed;
+
+    z-index: 1;
+
+    color: #8cff00;
+
+    opacity: .45;
+
+    text-shadow:
+        0 0 10px #8cff00;
+
+    animation:
+        floating 3s ease-in-out infinite;
+
+}
+
+
+.p1 {
+    top: 18%;
+    left: 17%;
+}
+
+
+.p2 {
+    top: 40%;
+    right: 12%;
+    animation-delay: .7s;
+}
+
+
+.p3 {
+    bottom: 25%;
+    left: 8%;
+    animation-delay: 1.2s;
+}
+
+
+.p4 {
+    top: 65%;
+    right: 20%;
+    animation-delay: 1.8s;
+}
+
+
+.p5 {
+    bottom: 12%;
+    left: 35%;
+    animation-delay: 2.3s;
+}
+
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+        opacity: .25;
+    }
+
+    50% {
+        transform: translateY(-12px);
+        opacity: .8;
+    }
+
+}
+
+
+/* =====================================================
+   GAME CONTAINER
+===================================================== */
+
+.game {
 
     position: relative;
 
@@ -232,264 +383,307 @@ body::before {
 
     margin: auto;
 
-    padding: 32px;
+    padding: 0 28px 30px;
 
     background:
 
         linear-gradient(
             145deg,
-            #151515,
-            #090909
+            rgba(13,13,13,.98),
+            rgba(3,3,3,.99)
         );
 
-    border: 3px solid #eeeeee;
-
-    border-radius: 28px;
+    border:
+        2px solid #8cff00;
 
     box-shadow:
 
-        0 0 0 5px #111,
+        0 0 0 5px #020202,
 
-        0 0 0 8px #8b0909,
+        0 0 0 7px rgba(140,255,0,.15),
 
-        0 30px 70px rgba(0,0,0,.75),
+        0 0 50px rgba(140,255,0,.15),
 
-        inset 0 0 50px rgba(255,0,0,.05);
+        0 30px 80px rgba(0,0,0,.9);
 
 }
 
 
-/* ==================================================
-   CABEÇALHO
-================================================== */
+/* =====================================================
+   TOPBAR
+===================================================== */
 
-.cabecalho {
+.topbar {
+
+    height: 38px;
+
+    margin: 0 -28px;
+
+    padding: 0 20px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 28px;
-
-    padding-bottom: 25px;
-
-    border-bottom: 2px solid #333;
-
-}
-
-
-/* IMAGEM */
-
-.venom-imagem {
-
-    width: 180px;
-    height: 180px;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
+    justify-content: space-between;
 
     background: #050505;
 
-    border: 3px solid #fff;
+    border-bottom:
+        1px solid #303030;
 
-    border-radius: 50%;
+    color: #555;
 
-    box-shadow:
-
-        0 0 0 5px #a00000,
-
-        0 0 30px rgba(255,0,0,.35);
-
-}
-
-
-.venom-imagem img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-/* TITULO */
-
-.titulo {
-    flex: 1;
-}
-
-
-.mini-titulo {
-
-    color: #cfcfcf;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-}
-
-
-h1 {
-
-    margin-top: 5px;
-
-    color: white;
-
-    font-family: 'Anton', sans-serif;
-
-    font-size: 65px;
-
-    letter-spacing: 3px;
-
-    line-height: 1;
-
-    text-shadow:
-
-        4px 4px 0 #900000,
-
-        0 0 20px rgba(255,0,0,.3);
-
-}
-
-
-.linha-vermelha {
-
-    width: 180px;
-
-    height: 5px;
-
-    margin: 10px 0;
-
-    background: #d60000;
-
-    box-shadow:
-        0 0 12px rgba(255,0,0,.6);
-
-}
-
-
-.titulo p {
-
-    color: #aaa;
-
-    font-size: 11px;
-
-    font-weight: bold;
+    font-size: 9px;
 
     letter-spacing: 2px;
 
 }
 
 
-/* ==================================================
-   STATUS
-================================================== */
+.top-left strong,
+.top-right strong {
 
-.status {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-top: 18px;
-
-    padding: 12px 15px;
-
-    background: #050505;
-
-    border: 1px solid #3a3a3a;
-
-    border-radius: 10px;
-
-    color: #999;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
+    color: #8cff00;
 
 }
 
 
-.status strong {
-    color: white;
-}
-
-
-.bolinha {
+.led {
 
     display: inline-block;
 
     width: 7px;
     height: 7px;
 
-    margin-right: 5px;
-
-    background: #20d95a;
+    margin-right: 6px;
 
     border-radius: 50%;
 
+    background: #8cff00;
+
     box-shadow:
-        0 0 8px #20d95a;
+        0 0 8px #8cff00;
 
 }
 
 
-/* ==================================================
-   FRASE
-================================================== */
+/* =====================================================
+   HERO
+===================================================== */
 
-.frase {
+.hero {
 
-    position: relative;
+    min-height: 220px;
 
-    margin: 25px 0;
+    display: flex;
 
-    padding: 25px 30px;
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 28px;
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #1c1c1c,
-            #100606
-        );
-
-    border-left: 4px solid #d00000;
-
-    border-radius: 12px;
+    border-bottom:
+        1px solid #242424;
 
 }
 
 
-.frase p {
+.hero-decoration {
 
-    color: #fff;
+    color: #8cff00;
+
+    opacity: .35;
+
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.venom-face {
+
+    position: relative;
+
+    width: 135px;
+    height: 115px;
+
+    flex-shrink: 0;
+
+    background: #000;
+
+    border:
+        2px solid #8cff00;
+
+    clip-path:
+        polygon(
+            50% 0,
+            95% 17%,
+            100% 65%,
+            75% 95%,
+            50% 100%,
+            25% 95%,
+            0 65%,
+            5% 17%
+        );
+
+    box-shadow:
+        0 0 25px rgba(140,255,0,.25);
+
+}
+
+
+.eye {
+
+    position: absolute;
+
+    top: 28px;
+
+    width: 40px;
+    height: 25px;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,.6);
+
+}
+
+
+.eye-left {
+
+    left: 17px;
+
+    transform:
+        skew(-25deg)
+        rotate(-8deg);
+
+}
+
+
+.eye-right {
+
+    right: 17px;
+
+    transform:
+        skew(25deg)
+        rotate(8deg);
+
+}
+
+
+.venom-mouth {
+
+    position: absolute;
+
+    left: 35px;
+    bottom: 13px;
+
+    width: 65px;
+    height: 30px;
+
+    background: white;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+}
+
+
+.tooth {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 7px;
+    height: 13px;
+
+    background: #eee;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+}
+
+
+.t1 { left: 7px; }
+.t2 { left: 20px; }
+.t3 { left: 33px; }
+.t4 { left: 46px; }
+.t5 { left: 57px; }
+
+
+.warning {
+
+    color: #8cff00;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.hero h1 {
+
+    margin: 3px 0;
 
     font-family: 'Anton', sans-serif;
 
-    font-size: 23px;
+    font-size: 65px;
 
-    letter-spacing: 1px;
+    letter-spacing: 7px;
+
+    line-height: 1;
+
+    color: #fff;
+
+    text-shadow:
+        3px 3px 0 #000,
+        0 0 20px rgba(140,255,0,.25);
 
 }
 
 
-.frase small {
+.subtitle {
 
-    display: block;
+    color: #777;
 
-    margin-top: 8px;
+    font-size: 10px;
 
-    color: #888;
+    letter-spacing: 3px;
+
+}
+
+
+.mini-line {
+
+    width: 100px;
+
+    height: 2px;
+
+    margin: 12px auto;
+
+    background: #8cff00;
+
+    box-shadow:
+        0 0 8px #8cff00;
+
+}
+
+
+.hero p {
+
+    color: #555;
 
     font-size: 9px;
 
@@ -498,27 +692,275 @@ h1 {
 }
 
 
-.aspas {
+/* =====================================================
+   HOST PANEL
+===================================================== */
 
-    position: absolute;
+.host-panel {
 
-    left: 12px;
-    top: 0;
+    position: relative;
 
-    color: #b30000;
+    margin-top: 25px;
 
-    font-size: 60px;
+    padding: 20px;
 
-    line-height: 1;
+    background: #070707;
+
+    border:
+        1px solid #292929;
+
+    border-left:
+        3px solid #8cff00;
 
 }
 
 
-/* ==================================================
-   MENU
-================================================== */
+.panel-label {
 
-.menu-titulo {
+    position: absolute;
+
+    top: -9px;
+    left: 15px;
+
+    padding: 2px 8px;
+
+    background: #8cff00;
+
+    color: #000;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.host-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.photo-frame {
+
+    position: relative;
+
+    width: 125px;
+    height: 125px;
+
+    flex-shrink: 0;
+
+    padding: 4px;
+
+    border:
+        2px solid #8cff00;
+
+    background: #000;
+
+    box-shadow:
+        0 0 20px rgba(140,255,0,.2);
+
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+.corner {
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-color: #fff;
+
+}
+
+
+.c1 {
+    left: -2px;
+    top: -2px;
+    border-left: 2px solid;
+    border-top: 2px solid;
+}
+
+
+.c2 {
+    right: -2px;
+    top: -2px;
+    border-right: 2px solid;
+    border-top: 2px solid;
+}
+
+
+.c3 {
+    left: -2px;
+    bottom: -2px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+}
+
+
+.c4 {
+    right: -2px;
+    bottom: -2px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+
+.scan {
+
+    position: absolute;
+
+    left: 7px;
+    bottom: 5px;
+
+    color: #8cff00;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px #8cff00;
+
+}
+
+
+.host-status {
+
+    color: #8cff00;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.green-dot {
+
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: #8cff00;
+
+    box-shadow:
+        0 0 8px #8cff00;
+
+}
+
+
+.host-info h2 {
+
+    margin: 2px 0;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 32px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.host-info p {
+
+    color: #666;
+
+    font-size: 12px;
+
+}
+
+
+.stats {
+
+    margin-top: 13px;
+
+}
+
+
+.stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 6px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.bar {
+
+    width: 150px;
+    height: 5px;
+
+    background: #222;
+
+}
+
+
+.bar i {
+
+    display: block;
+
+    height: 100%;
+
+    background: #8cff00;
+
+    box-shadow:
+        0 0 8px rgba(140,255,0,.7);
+
+}
+
+
+.stat strong {
+
+    color: #8cff00;
+
+    font-size: 8px;
+
+}
+
+
+/* =====================================================
+   SYSTEM ALERT
+===================================================== */
+
+.system-alert {
 
     display: flex;
 
@@ -526,81 +968,161 @@ h1 {
 
     gap: 12px;
 
-    margin-bottom: 17px;
+    margin-top: 20px;
+
+    padding: 12px 15px;
+
+    background: #0b0b0b;
+
+    border:
+        1px solid #303030;
 
 }
 
 
-.menu-titulo span {
+.alert-icon {
 
-    flex: 1;
+    width: 28px;
+    height: 28px;
 
-    height: 2px;
+    display: flex;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #9d0000
-        );
+    align-items: center;
+    justify-content: center;
 
-}
+    background: #8cff00;
 
-
-.menu-titulo span:last-child {
-
-    background:
-        linear-gradient(
-            90deg,
-            #9d0000,
-            transparent
-        );
-
-}
-
-
-.menu-titulo h2 {
-
-    color: #eee;
+    color: #000;
 
     font-family: 'Anton', sans-serif;
 
     font-size: 18px;
+
+}
+
+
+.system-alert strong {
+
+    display: block;
+
+    color: #8cff00;
+
+    font-size: 10px;
 
     letter-spacing: 2px;
 
 }
 
 
-/* ==================================================
-   CARDS
-================================================== */
+.system-alert span {
 
-.card {
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+.alert-code {
+
+    margin-left: auto;
+
+    color: #444;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   TÍTULO DAS MISSÕES
+===================================================== */
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 30px 0 13px;
+
+}
+
+
+.section-title span {
+
+    color: #8cff00;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 20px;
+
+}
+
+
+.section-title h2 {
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 20px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-title small {
+
+    margin-left: auto;
+
+    color: #444;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   MISSÕES
+===================================================== */
+
+.missions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.mission {
 
     overflow: hidden;
 
-    margin-bottom: 14px;
+    background: #070707;
 
-    background: #111;
-
-    border: 2px solid #353535;
-
-    border-radius: 14px;
+    border:
+        1px solid #292929;
 
     transition: .25s;
 
 }
 
 
-.card:hover {
+.mission:hover {
 
-    border-color: #a60000;
+    border-color: #8cff00;
 
-    transform: translateY(-2px);
+    transform: translateX(3px);
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.45);
+        -3px 0 15px rgba(140,255,0,.08);
 
 }
 
@@ -613,7 +1135,9 @@ summary {
 
     gap: 14px;
 
-    padding: 15px;
+    min-height: 76px;
+
+    padding: 12px 15px;
 
     cursor: pointer;
 
@@ -629,50 +1153,12 @@ summary::-webkit-details-marker {
 }
 
 
-/* CORES */
+.mission-icon {
 
-.enem summary {
-    background:
-        linear-gradient(135deg,#151b22,#202d38);
-}
+    position: relative;
 
-
-.faculdade summary {
-    background:
-        linear-gradient(135deg,#101d17,#183d27);
-}
-
-
-.tempo summary {
-    background:
-        linear-gradient(135deg,#18131e,#2d1c35);
-}
-
-
-.dinheiro summary {
-    background:
-        linear-gradient(135deg,#211b0d,#403213);
-}
-
-
-.futuro summary {
-    background:
-        linear-gradient(135deg,#250c0c,#421212);
-}
-
-
-.curriculo summary {
-    background:
-        linear-gradient(135deg,#161616,#272727);
-}
-
-
-/* ICONE */
-
-.icone {
-
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
 
@@ -681,231 +1167,412 @@ summary::-webkit-details-marker {
 
     flex-shrink: 0;
 
-    background: #090909;
+    color: #8cff00;
 
-    border: 2px solid #666;
+    border:
+        1px solid #8cff00;
 
-    border-radius: 10px;
+    background: #030303;
 
-    font-size: 26px;
+    font-size: 20px;
 
 }
 
 
-/* TITULO */
+.mission-icon span {
 
-.card-titulo {
+    position: absolute;
+
+    right: -5px;
+    bottom: -5px;
+
+    padding: 1px 3px;
+
+    background: #8cff00;
+
+    color: #000;
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+}
+
+
+.mission-name {
+
     flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
 }
 
 
-.card-titulo strong {
-
-    display: block;
-
-    color: white;
+.mission-name strong {
 
     font-family: 'Anton', sans-serif;
 
-    font-size: 18px;
+    font-size: 17px;
 
     letter-spacing: 1px;
 
 }
 
 
-.card-titulo small {
+.mission-name small {
 
-    display: block;
+    margin-top: 2px;
 
-    margin-top: 3px;
+    color: #555;
 
-    color: #999;
+    font-size: 8px;
 
-    font-size: 10px;
-
-}
-
-
-/* ABRIR */
-
-.abrir {
-
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-
-    border: 1px solid #777;
-
-    border-radius: 50%;
-
-    font-size: 18px;
-
-    transition: .2s;
+    letter-spacing: 2px;
 
 }
 
 
-details[open] .abrir {
+.mission-status {
 
-    color: #ff3333;
+    padding: 4px 7px;
+
+    color: #8cff00;
+
+    border: 1px solid #315800;
+
+    background: #091000;
+
+    font-size: 7px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.open {
+
+    color: #8cff00;
+
+    font-size: 25px;
+
+    transition: .25s;
+
+}
+
+
+details[open] .open {
 
     transform: rotate(45deg);
 
 }
 
 
-/* ==================================================
-   CONTEÚDO
-================================================== */
+/* CORES DOS ÍCONES */
 
-.conteudo {
+.enem .mission-icon {
+    border-color: #70ff00;
+}
 
-    padding: 25px;
+
+.faculdade .mission-icon {
+    border-color: #b7ff55;
+}
+
+
+.tempo .mission-icon {
+    border-color: #8cff00;
+}
+
+
+.dinheiro .mission-icon {
+    border-color: #d5ff00;
+}
+
+
+.futuro .mission-icon {
+    border-color: #65e600;
+}
+
+
+.curriculum .mission-icon {
+    border-color: #a7ff3d;
+}
+
+
+/* =====================================================
+   CONTEÚDO DAS MISSÕES
+===================================================== */
+
+.mission-content {
+
+    padding: 24px;
 
     background:
 
-        radial-gradient(
-            circle at 100% 0,
-            rgba(150,0,0,.12),
-            transparent 30%
-        ),
+        linear-gradient(
+            180deg,
+            #0c0c0c,
+            #040404
+        );
 
-        #080808;
+    border-top:
+        1px solid #252525;
 
-    border-top: 2px solid #333;
-
-    color: #aaa;
+    color: #858585;
 
     line-height: 1.7;
 
 }
 
 
-.tag {
-
-    display: inline-block;
-
-    margin-bottom: 13px;
-
-    padding: 5px 9px;
-
-    color: white;
-
-    background: #a00000;
-
-    border-radius: 5px;
-
-    font-size: 8px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-}
-
-
-.conteudo h3 {
-
-    margin-bottom: 10px;
-
-    color: white;
-
-    font-family: 'Anton', sans-serif;
-
-    font-size: 23px;
-
-    letter-spacing: 1px;
-
-}
-
-
-.conteudo h4 {
-
-    margin-top: 18px;
-
-    margin-bottom: 8px;
-
-    color: #d71919;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-}
-
-
-.conteudo p {
-    margin-bottom: 10px;
-}
-
-
-ul {
-
-    padding-left: 22px;
-
-}
-
-
-li {
-    margin-bottom: 7px;
-}
-
-
-li::marker {
-    color: #d00000;
-}
-
-
-/* ==================================================
-   RECOMPENSAS
-================================================== */
-
-.recompensa {
+.mission-header {
 
     display: flex;
 
-    flex-direction: column;
+    justify-content: space-between;
 
-    align-items: center;
+    margin-bottom: 15px;
 
-    gap: 5px;
-
-    margin-top: 20px;
-
-    padding: 16px;
-
-    text-align: center;
-
-    background: #171717;
-
-    border: 2px solid #555;
-
-    border-radius: 10px;
-
-}
-
-
-.recompensa span {
-
-    color: #888;
+    color: #555;
 
     font-size: 8px;
-
-    font-weight: bold;
 
     letter-spacing: 2px;
 
 }
 
 
-.recompensa strong {
+.mission-header b {
+
+    color: #8cff00;
+
+}
+
+
+.mission-content h3 {
+
+    margin-bottom: 8px;
+
+    color: #fff;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 25px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.mission-content p {
+
+    margin-bottom: 17px;
+
+    font-size: 13px;
+
+}
+
+
+.content-title {
+
+    margin-bottom: 7px;
+
+    color: #8cff00;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.mission-content ul {
+
+    padding-left: 20px;
+
+}
+
+
+.mission-content li {
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+
+}
+
+
+.mission-content li::marker {
+
+    color: #8cff00;
+
+}
+
+
+/* =====================================================
+   RECOMPENSA
+===================================================== */
+
+.mission-reward {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: #080808;
+
+    border:
+        1px solid #8cff00;
+
+    box-shadow:
+        inset 0 0 20px rgba(140,255,0,.04);
+
+}
+
+
+.mission-reward span {
+
+    display: block;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.mission-reward strong {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8cff00;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   DINHEIRO
+===================================================== */
+
+.money-display {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background: #050505;
+
+    border:
+        1px solid #394900;
+
+}
+
+
+.money-display span {
+
+    display: block;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.money-display strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #8cff00;
+
+}
+
+
+.money-symbol {
+
+    color: #8cff00;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 35px;
+
+    text-shadow:
+        0 0 15px rgba(140,255,0,.5);
+
+}
+
+
+/* =====================================================
+   FUTURO
+===================================================== */
+
+.future-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    background: #080808;
+
+    border-left:
+        3px solid #8cff00;
+
+}
+
+
+.future-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid #333;
+
+    font-size: 20px;
+
+}
+
+
+.future-card strong {
+
+    display: block;
 
     color: white;
 
@@ -914,201 +1581,11 @@ li::marker {
 }
 
 
-.verde {
-    border-color: #208a4a;
-}
-
-
-.azul {
-    border-color: #3479a8;
-}
-
-
-.dourado {
-    border-color: #a98522;
-}
-
-
-.vermelho {
-
-    border-color: #a00000;
-
-    box-shadow:
-        inset 0 0 20px rgba(180,0,0,.12);
-
-}
-
-
-/* ==================================================
-   PLANOS FUTUROS
-================================================== */
-
-.objetivo-futuro {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    margin-top: 10px;
-
-    padding: 13px;
-
-    background: #111;
-
-    border: 1px solid #333;
-
-    border-radius: 10px;
-
-}
-
-
-.simbolo {
-
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    background: #1c0808;
-
-    border: 2px solid #8f1616;
-
-    border-radius: 9px;
-
-    font-size: 22px;
-
-}
-
-
-.objetivo-futuro strong {
-
-    display: block;
-
-    color: white;
-
-    font-size: 13px;
-
-}
-
-
-.objetivo-futuro small {
+.future-card span {
 
     display: block;
 
     margin-top: 3px;
-
-    color: #777;
-
-    font-size: 10px;
-
-}
-
-
-/* ==================================================
-   CURRÍCULO
-================================================== */
-
-.curriculo-bloqueado {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 7px;
-
-    margin-top: 20px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    background: #111;
-
-    border: 2px dashed #555;
-
-    border-radius: 12px;
-
-}
-
-
-.curriculo-bloqueado span {
-    font-size: 30px;
-}
-
-
-.curriculo-bloqueado strong {
-
-    color: #ddd;
-
-    font-family: 'Anton', sans-serif;
-
-    font-size: 15px;
-
-}
-
-
-.curriculo-bloqueado small {
-    color: #777;
-}
-
-
-/* ==================================================
-   RODAPÉ
-================================================== */
-
-footer {
-
-    margin-top: 25px;
-
-    padding-top: 20px;
-
-    text-align: center;
-
-    border-top: 1px solid #333;
-
-}
-
-
-.teia-footer {
-
-    margin-bottom: 12px;
-
-    color: #777;
-
-    font-size: 14px;
-
-}
-
-
-footer strong {
-
-    display: block;
-
-    color: #aaa;
-
-    font-family: 'Anton', sans-serif;
-
-    font-size: 13px;
-
-    letter-spacing: 2px;
-
-}
-
-
-footer small {
-
-    display: block;
-
-    margin-top: 5px;
 
     color: #666;
 
@@ -1117,96 +1594,259 @@ footer small {
 }
 
 
-/* ==================================================
-   RESPONSIVO
-================================================== */
+/* =====================================================
+   CURRÍCULO
+===================================================== */
 
-@media (max-width: 700px) {
+.classified {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #080808,
+            #080808 8px,
+            #0b0b0b 8px,
+            #0b0b0b 16px
+        );
+
+    border:
+        1px dashed #444;
+
+}
+
+
+.lock {
+
+    font-size: 25px;
+
+}
+
+
+.classified span {
+
+    color: #8cff00;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.classified strong {
+
+    color: #fff;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.classified small {
+
+    color: #555;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid #292929;
+
+}
+
+
+.footer-teia {
+
+    color: #8cff00;
+
+    opacity: .4;
+
+    letter-spacing: 8px;
+
+}
+
+
+.venom-text {
+
+    margin-top: 10px;
+
+    color: #8cff00;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 27px;
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 15px rgba(140,255,0,.4);
+
+}
+
+
+footer p {
+
+    margin-top: 4px;
+
+    color: #444;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.footer-warning {
+
+    margin-top: 15px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
 
     body {
-        padding: 25px 10px 50px;
+        padding: 20px 8px;
     }
 
 
-    .container {
-        padding: 20px;
-
-        border-width: 2px;
+    .game {
+        padding: 0 15px 25px;
     }
 
 
-    .cabecalho {
+    .topbar {
+        margin: 0 -15px;
+        padding: 0 10px;
+    }
 
+
+    .top-center {
+        display: none;
+    }
+
+
+    .hero {
         flex-direction: column;
-
-        text-align: center;
-
+        padding: 30px 5px;
+        gap: 15px;
     }
 
 
-    .venom-imagem {
-
-        width: 145px;
-        height: 145px;
-
+    .hero-decoration {
+        display: none;
     }
 
 
-    h1 {
-        font-size: 48px;
+    .hero h1 {
+        font-size: 50px;
     }
 
 
-    .linha-vermelha {
-        margin: 10px auto;
-    }
-
-
-    .titulo p {
-        font-size: 9px;
-    }
-
-
-    .status {
-
+    .host-content {
         flex-direction: column;
-
         text-align: center;
-
     }
 
 
-    .frase p {
-        font-size: 18px;
+    .stats {
+        width: 100%;
     }
 
 
-    .card-titulo strong {
-        font-size: 15px;
+    .stat {
+        justify-content: center;
     }
 
 
-    .card-titulo small {
-        font-size: 9px;
+    .section-title small {
+        display: none;
     }
 
 
-    .icone {
-
-        width: 45px;
-        height: 45px;
-
-        font-size: 21px;
-
+    summary {
+        gap: 9px;
+        padding: 10px;
     }
 
 
-    .conteudo {
-        padding: 19px;
+    .mission-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 17px;
     }
 
 
-    .olho {
+    .mission-name strong {
+        font-size: 13px;
+    }
+
+
+    .mission-name small {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+
+    .mission-status {
+        display: none;
+    }
+
+
+    .mission-content {
+        padding: 19px 15px;
+    }
+
+
+    .teia {
+        display: none;
+    }
+
+
+    .tentaculo {
         display: none;
     }
 
