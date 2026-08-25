@@ -1,0 +1,1214 @@
+```css
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;500;600;700&display=swap');
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    padding: 55px 20px 70px;
+
+    overflow-x: hidden;
+
+    font-family: 'Quicksand', sans-serif;
+
+    color: #eeeeee;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -10%,
+            #4b0808 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(180,0,0,.20),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #030303,
+            #0c0c0c 45%,
+            #170606 100%
+        );
+
+}
+
+
+/* ==================================================
+   TEXTURA DE TEIA
+================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: .18;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            transparent 0,
+            transparent 55px,
+            rgba(255,255,255,.25) 56px,
+            transparent 58px
+        );
+
+    background-size: 120px 120px;
+
+}
+
+
+/* ==================================================
+   TEIAS
+================================================== */
+
+.teia {
+
+    position: fixed;
+
+    width: 260px;
+    height: 260px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    opacity: .35;
+
+}
+
+
+.teia1 {
+
+    top: -90px;
+    left: -80px;
+
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+
+    border-radius: 0 0 100% 0;
+
+}
+
+
+.teia2 {
+
+    right: -90px;
+    bottom: -90px;
+
+    border-left: 3px solid #fff;
+    border-top: 3px solid #fff;
+
+    border-radius: 100% 0 0 0;
+
+}
+
+
+/* ==================================================
+   OLHOS
+================================================== */
+
+.olho {
+
+    position: fixed;
+
+    z-index: 1;
+
+    color: white;
+
+    font-size: 90px;
+
+    opacity: .08;
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+
+}
+
+
+.olho1 {
+    top: 5%;
+    left: 2%;
+}
+
+
+.olho2 {
+    right: 2%;
+    bottom: 7%;
+
+    transform: rotate(20deg);
+}
+
+
+/* ==================================================
+   SIMBIONTE
+================================================== */
+
+.simbiote {
+
+    position: fixed;
+
+    z-index: 1;
+
+    width: 150px;
+    height: 450px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,0,0,.12),
+            transparent
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+}
+
+
+.simbiote1 {
+
+    left: -80px;
+    top: 20%;
+
+    transform: rotate(15deg);
+}
+
+
+.simbiote2 {
+
+    right: -80px;
+    bottom: 20%;
+
+    transform: rotate(-15deg);
+}
+
+
+/* ==================================================
+   CONTAINER
+================================================== */
+
+.container {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 820px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+    padding: 32px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151515,
+            #090909
+        );
+
+    border: 3px solid #eeeeee;
+
+    border-radius: 28px;
+
+    box-shadow:
+
+        0 0 0 5px #111,
+
+        0 0 0 8px #8b0909,
+
+        0 30px 70px rgba(0,0,0,.75),
+
+        inset 0 0 50px rgba(255,0,0,.05);
+
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.cabecalho {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 2px solid #333;
+
+}
+
+
+/* IMAGEM */
+
+.venom-imagem {
+
+    width: 180px;
+    height: 180px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #050505;
+
+    border: 3px solid #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 0 5px #a00000,
+
+        0 0 30px rgba(255,0,0,.35);
+
+}
+
+
+.venom-imagem img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+/* TITULO */
+
+.titulo {
+    flex: 1;
+}
+
+
+.mini-titulo {
+
+    color: #cfcfcf;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+h1 {
+
+    margin-top: 5px;
+
+    color: white;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 65px;
+
+    letter-spacing: 3px;
+
+    line-height: 1;
+
+    text-shadow:
+
+        4px 4px 0 #900000,
+
+        0 0 20px rgba(255,0,0,.3);
+
+}
+
+
+.linha-vermelha {
+
+    width: 180px;
+
+    height: 5px;
+
+    margin: 10px 0;
+
+    background: #d60000;
+
+    box-shadow:
+        0 0 12px rgba(255,0,0,.6);
+
+}
+
+
+.titulo p {
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ==================================================
+   STATUS
+================================================== */
+
+.status {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 12px 15px;
+
+    background: #050505;
+
+    border: 1px solid #3a3a3a;
+
+    border-radius: 10px;
+
+    color: #999;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.status strong {
+    color: white;
+}
+
+
+.bolinha {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 5px;
+
+    background: #20d95a;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #20d95a;
+
+}
+
+
+/* ==================================================
+   FRASE
+================================================== */
+
+.frase {
+
+    position: relative;
+
+    margin: 25px 0;
+
+    padding: 25px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1c1c1c,
+            #100606
+        );
+
+    border-left: 4px solid #d00000;
+
+    border-radius: 12px;
+
+}
+
+
+.frase p {
+
+    color: #fff;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 23px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.frase small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.aspas {
+
+    position: absolute;
+
+    left: 12px;
+    top: 0;
+
+    color: #b30000;
+
+    font-size: 60px;
+
+    line-height: 1;
+
+}
+
+
+/* ==================================================
+   MENU
+================================================== */
+
+.menu-titulo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.menu-titulo span {
+
+    flex: 1;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #9d0000
+        );
+
+}
+
+
+.menu-titulo span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            #9d0000,
+            transparent
+        );
+
+}
+
+
+.menu-titulo h2 {
+
+    color: #eee;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.card {
+
+    overflow: hidden;
+
+    margin-bottom: 14px;
+
+    background: #111;
+
+    border: 2px solid #353535;
+
+    border-radius: 14px;
+
+    transition: .25s;
+
+}
+
+
+.card:hover {
+
+    border-color: #a60000;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.45);
+
+}
+
+
+summary {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    user-select: none;
+
+}
+
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* CORES */
+
+.enem summary {
+    background:
+        linear-gradient(135deg,#151b22,#202d38);
+}
+
+
+.faculdade summary {
+    background:
+        linear-gradient(135deg,#101d17,#183d27);
+}
+
+
+.tempo summary {
+    background:
+        linear-gradient(135deg,#18131e,#2d1c35);
+}
+
+
+.dinheiro summary {
+    background:
+        linear-gradient(135deg,#211b0d,#403213);
+}
+
+
+.futuro summary {
+    background:
+        linear-gradient(135deg,#250c0c,#421212);
+}
+
+
+.curriculo summary {
+    background:
+        linear-gradient(135deg,#161616,#272727);
+}
+
+
+/* ICONE */
+
+.icone {
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #090909;
+
+    border: 2px solid #666;
+
+    border-radius: 10px;
+
+    font-size: 26px;
+
+}
+
+
+/* TITULO */
+
+.card-titulo {
+    flex: 1;
+}
+
+
+.card-titulo strong {
+
+    display: block;
+
+    color: white;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.card-titulo small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #999;
+
+    font-size: 10px;
+
+}
+
+
+/* ABRIR */
+
+.abrir {
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    border: 1px solid #777;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+
+    transition: .2s;
+
+}
+
+
+details[open] .abrir {
+
+    color: #ff3333;
+
+    transform: rotate(45deg);
+
+}
+
+
+/* ==================================================
+   CONTEÚDO
+================================================== */
+
+.conteudo {
+
+    padding: 25px;
+
+    background:
+
+        radial-gradient(
+            circle at 100% 0,
+            rgba(150,0,0,.12),
+            transparent 30%
+        ),
+
+        #080808;
+
+    border-top: 2px solid #333;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+}
+
+
+.tag {
+
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    padding: 5px 9px;
+
+    color: white;
+
+    background: #a00000;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.conteudo h3 {
+
+    margin-bottom: 10px;
+
+    color: white;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 23px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.conteudo h4 {
+
+    margin-top: 18px;
+
+    margin-bottom: 8px;
+
+    color: #d71919;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.conteudo p {
+    margin-bottom: 10px;
+}
+
+
+ul {
+
+    padding-left: 22px;
+
+}
+
+
+li {
+    margin-bottom: 7px;
+}
+
+
+li::marker {
+    color: #d00000;
+}
+
+
+/* ==================================================
+   RECOMPENSAS
+================================================== */
+
+.recompensa {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    text-align: center;
+
+    background: #171717;
+
+    border: 2px solid #555;
+
+    border-radius: 10px;
+
+}
+
+
+.recompensa span {
+
+    color: #888;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+}
+
+
+.recompensa strong {
+
+    color: white;
+
+    font-size: 12px;
+
+}
+
+
+.verde {
+    border-color: #208a4a;
+}
+
+
+.azul {
+    border-color: #3479a8;
+}
+
+
+.dourado {
+    border-color: #a98522;
+}
+
+
+.vermelho {
+
+    border-color: #a00000;
+
+    box-shadow:
+        inset 0 0 20px rgba(180,0,0,.12);
+
+}
+
+
+/* ==================================================
+   PLANOS FUTUROS
+================================================== */
+
+.objetivo-futuro {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 10px;
+
+    padding: 13px;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    border-radius: 10px;
+
+}
+
+
+.simbolo {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #1c0808;
+
+    border: 2px solid #8f1616;
+
+    border-radius: 9px;
+
+    font-size: 22px;
+
+}
+
+
+.objetivo-futuro strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
+
+.objetivo-futuro small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777;
+
+    font-size: 10px;
+
+}
+
+
+/* ==================================================
+   CURRÍCULO
+================================================== */
+
+.curriculo-bloqueado {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #111;
+
+    border: 2px dashed #555;
+
+    border-radius: 12px;
+
+}
+
+
+.curriculo-bloqueado span {
+    font-size: 30px;
+}
+
+
+.curriculo-bloqueado strong {
+
+    color: #ddd;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 15px;
+
+}
+
+
+.curriculo-bloqueado small {
+    color: #777;
+}
+
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+footer {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #333;
+
+}
+
+
+.teia-footer {
+
+    margin-bottom: 12px;
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+footer strong {
+
+    display: block;
+
+    color: #aaa;
+
+    font-family: 'Anton', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+footer small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 25px 10px 50px;
+    }
+
+
+    .container {
+        padding: 20px;
+
+        border-width: 2px;
+    }
+
+
+    .cabecalho {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .venom-imagem {
+
+        width: 145px;
+        height: 145px;
+
+    }
+
+
+    h1 {
+        font-size: 48px;
+    }
+
+
+    .linha-vermelha {
+        margin: 10px auto;
+    }
+
+
+    .titulo p {
+        font-size: 9px;
+    }
+
+
+    .status {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .frase p {
+        font-size: 18px;
+    }
+
+
+    .card-titulo strong {
+        font-size: 15px;
+    }
+
+
+    .card-titulo small {
+        font-size: 9px;
+    }
+
+
+    .icone {
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 21px;
+
+    }
+
+
+    .conteudo {
+        padding: 19px;
+    }
+
+
+    .olho {
+        display: none;
+    }
+
+}
+```
