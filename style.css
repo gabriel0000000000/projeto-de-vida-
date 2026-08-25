@@ -1557,3 +1557,55 @@ footer small {
     }
 
 }
+/* =====================================
+   ANIMAÇÃO DOS CONTEÚDOS
+===================================== */
+
+@keyframes entradaConteudo {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================
+   EFEITO DO PERFIL
+===================================== */
+
+.perfil {
+    transition: transform .15s ease, border-color .25s ease;
+}
+
+
+/* =====================================
+   MELHORIA DOS CARDS
+===================================== */
+
+.card {
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.card[open] {
+    border-color: rgba(183, 255, 0, .35);
+}
+
+
+/* =====================================
+   BOTÃO CURRÍCULO
+===================================== */
+
+.botao-curriculo:active {
+    transform: scale(.96);
+}
