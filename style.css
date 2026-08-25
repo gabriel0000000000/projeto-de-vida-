@@ -4,53 +4,40 @@
     box-sizing: border-box;
 }
 
-
 :root {
-
     --preto: #050505;
     --preto2: #0b0b0b;
     --cinza: #151515;
-
     --branco: #f5f5f5;
     --cinza-texto: #a8a8a8;
-
     --verde: #b7ff00;
     --verde2: #72a800;
-
     --borda: rgba(183,255,0,.35);
-
 }
-
 
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
-
     min-height: 100vh;
-
-    padding: 35px 20px 70px;
+    padding: 35px 20px 90px;
 
     font-family: 'Orbitron', sans-serif;
 
     color: var(--branco);
 
     background:
-
         radial-gradient(
             circle at 50% -10%,
             rgba(183,255,0,.12),
             transparent 35%
         ),
-
         radial-gradient(
             circle at 0% 100%,
             rgba(183,255,0,.08),
             transparent 30%
         ),
-
         linear-gradient(
             135deg,
             #020202,
@@ -67,26 +54,21 @@ body {
 ===================================== */
 
 body::before {
-
     content: "";
 
     position: fixed;
-
     inset: 0;
 
     pointer-events: none;
-
     z-index: -1;
 
     opacity: .18;
 
     background-image:
-
         linear-gradient(
             rgba(255,255,255,.025) 1px,
             transparent 1px
         ),
-
         linear-gradient(
             90deg,
             rgba(255,255,255,.025) 1px,
@@ -102,7 +84,6 @@ body::before {
 ===================================== */
 
 .teia {
-
     position: fixed;
 
     width: 350px;
@@ -115,40 +96,32 @@ body::before {
     z-index: 0;
 }
 
-
 .teia1 {
-
     top: -120px;
     left: -100px;
 
     border-radius: 50%;
 
     background:
-
         repeating-radial-gradient(
             circle,
             transparent 0 28px,
             #fff 29px 30px
         );
-
 }
 
-
 .teia2 {
-
     right: -120px;
     bottom: -120px;
 
     border-radius: 50%;
 
     background:
-
         repeating-radial-gradient(
             circle,
             transparent 0 28px,
             var(--verde) 29px 30px
         );
-
 }
 
 
@@ -157,7 +130,6 @@ body::before {
 ===================================== */
 
 .gosma {
-
     position: fixed;
 
     width: 180px;
@@ -174,12 +146,9 @@ body::before {
     opacity: .35;
 
     pointer-events: none;
-
 }
 
-
 .gosma1 {
-
     height: 320px;
 
     top: -80px;
@@ -196,12 +165,9 @@ body::before {
         20% 65%,
         10% 35%
     );
-
 }
 
-
 .gosma2 {
-
     height: 250px;
 
     right: 20px;
@@ -218,12 +184,9 @@ body::before {
         25% 35%,
         0 60%
     );
-
 }
 
-
 .gosma3 {
-
     height: 180px;
 
     bottom: 0;
@@ -241,7 +204,6 @@ body::before {
         30% 70%,
         15% 35%
     );
-
 }
 
 
@@ -250,7 +212,6 @@ body::before {
 ===================================== */
 
 .tentaculo {
-
     position: fixed;
 
     width: 250px;
@@ -271,29 +232,20 @@ body::before {
     filter: blur(3px);
 
     pointer-events: none;
-
 }
 
-
 .tentaculo1 {
-
     left: -80px;
     top: 48%;
 
-    transform:
-        rotate(25deg);
-
+    transform: rotate(25deg);
 }
 
-
 .tentaculo2 {
-
     right: -80px;
     top: 62%;
 
-    transform:
-        rotate(-25deg);
-
+    transform: rotate(-25deg);
 }
 
 
@@ -302,9 +254,7 @@ body::before {
 ===================================== */
 
 .topo {
-
     width: 1100px;
-
     max-width: 100%;
 
     margin: auto;
@@ -312,70 +262,51 @@ body::before {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     padding: 10px 5px 25px;
-
 }
-
 
 .logo {
-
     display: flex;
-
     flex-direction: column;
-
 }
 
-
 .logo-venom {
-
     font-family: 'Bebas Neue', sans-serif;
 
-    font-size: 46px;
+    font-size: 50px;
 
     letter-spacing: 5px;
 
     color: white;
 
     text-shadow:
-
         3px 3px 0 #000,
-
         0 0 15px rgba(183,255,0,.35);
-
 }
 
-
 .linha-logo {
-
-    font-size: 8px;
+    font-size: 9px;
 
     letter-spacing: 4px;
 
     color: var(--verde);
-
 }
 
-
 .status {
-
-    font-size: 9px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 
     color: #aaa;
-
 }
 
-
 .online {
-
     display: inline-block;
 
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
 
     margin-right: 6px;
 
@@ -388,7 +319,6 @@ body::before {
 
     animation:
         pulsar 1.5s infinite;
-
 }
 
 
@@ -397,21 +327,18 @@ body::before {
 ===================================== */
 
 .game-container {
-
     position: relative;
 
     z-index: 2;
 
     width: 900px;
-
     max-width: 100%;
 
     margin: auto;
 
-    padding: 25px;
+    padding: 28px;
 
     background:
-
         linear-gradient(
             145deg,
             rgba(22,22,22,.97),
@@ -419,18 +346,12 @@ body::before {
         );
 
     border:
-
-        1px solid
-        rgba(255,255,255,.12);
+        1px solid rgba(255,255,255,.12);
 
     box-shadow:
-
         0 0 0 1px rgba(183,255,0,.05),
-
         0 25px 80px rgba(0,0,0,.8),
-
         inset 0 0 60px rgba(183,255,0,.025);
-
 }
 
 
@@ -439,14 +360,13 @@ body::before {
 ===================================== */
 
 .perfil {
-
     display: flex;
 
     align-items: center;
 
     gap: 22px;
 
-    padding: 22px;
+    padding: 24px;
 
     background: #090909;
 
@@ -456,11 +376,10 @@ body::before {
 
     overflow: hidden;
 
+    transition: transform .15s ease;
 }
 
-
 .perfil::after {
-
     content: "";
 
     position: absolute;
@@ -474,24 +393,18 @@ body::before {
     border-radius: 50%;
 
     border: 1px solid rgba(183,255,0,.2);
-
 }
-
 
 .foto-container {
-
     position: relative;
 
-    width: 125px;
-    height: 125px;
+    width: 130px;
+    height: 130px;
 
     flex-shrink: 0;
-
 }
 
-
 .foto-venom {
-
     width: 100%;
     height: 100%;
 
@@ -506,18 +419,11 @@ body::before {
         contrast(1.15);
 
     box-shadow:
-
         0 0 0 5px #080808,
-
         0 0 25px rgba(183,255,0,.25);
-
 }
 
-
-/* olhos decorativos */
-
 .olho {
-
     position: absolute;
 
     width: 35px;
@@ -531,151 +437,111 @@ body::before {
 
     border-radius: 100% 0;
 
-    transform: rotate(25deg);
-
     filter:
         drop-shadow(0 0 4px white);
-
 }
 
-
 .olho-esquerdo {
-
     top: -4px;
     left: 20px;
 
+    transform: rotate(25deg);
 }
 
-
 .olho-direito {
-
     top: -4px;
     right: 20px;
 
-    transform:
-        rotate(-25deg);
-
+    transform: rotate(-25deg);
 }
-
 
 .perfil-info {
-
     flex: 1;
-
 }
 
-
 .tag {
-
-    font-size: 8px;
+    font-size: 9px;
 
     letter-spacing: 3px;
 
     color: var(--verde);
-
 }
 
-
 .perfil-info h1 {
-
     margin: 5px 0;
 
     font-family: 'Bebas Neue', sans-serif;
 
-    font-size: 48px;
+    font-size: 52px;
 
     letter-spacing: 4px;
-
 }
-
 
 .perfil-info p {
-
     color: #888;
 
-    font-size: 10px;
+    font-size: 12px;
 
     letter-spacing: 2px;
-
 }
-
-
-.perfil-info small {
-
-    color: #666;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-
-}
-
 
 .barra-status {
-
     width: 100%;
     max-width: 350px;
 
-    height: 5px;
+    height: 6px;
 
-    margin: 13px 0 7px;
+    margin: 13px 0 8px;
 
     background: #222;
-
 }
 
-
 .barra-status span {
-
     display: block;
 
     width: 76%;
-
     height: 100%;
 
     background: var(--verde);
 
     box-shadow:
         0 0 10px var(--verde);
-
 }
 
+.perfil-info small {
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
 
 .nivel {
-
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
 
     border: 1px solid #333;
-
 }
-
 
 .nivel span {
-
     color: #666;
 
-    font-size: 8px;
-
+    font-size: 9px;
 }
 
-
 .nivel strong {
-
     color: var(--verde);
 
     font-family: 'Bebas Neue';
 
-    font-size: 35px;
-
+    font-size: 38px;
 }
 
 
@@ -684,87 +550,65 @@ body::before {
 ===================================== */
 
 .introducao {
-
     display: flex;
 
     align-items: center;
 
     gap: 18px;
 
-    margin: 35px 0 22px;
-
+    margin: 38px 0 24px;
 }
 
-
 .simbolo {
-
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
 
     border: 1px solid var(--verde);
 
     color: var(--verde);
 
-    font-size: 23px;
+    font-size: 25px;
 
-    transform:
-        rotate(45deg);
-
+    transform: rotate(45deg);
 }
 
-
-.simbolo::first-letter {
-
-    transform:
-        rotate(-45deg);
-
+.simbolo {
+    text-shadow: 0 0 10px var(--verde);
 }
-
 
 .mini-titulo {
-
     color: #666;
 
-    font-size: 7px;
+    font-size: 9px;
 
     letter-spacing: 3px;
-
 }
 
-
 .introducao h2 {
-
     margin-top: 5px;
 
     font-family: 'Bebas Neue';
 
-    font-size: 35px;
+    font-size: 39px;
 
     letter-spacing: 2px;
-
 }
-
 
 .introducao h2 span {
-
     color: var(--verde);
-
 }
 
-
 .introducao p {
-
-    margin-top: 4px;
+    margin-top: 5px;
 
     color: #777;
 
-    font-size: 9px;
-
+    font-size: 11px;
 }
 
 
@@ -773,80 +617,64 @@ body::before {
 ===================================== */
 
 .menu {
-
     display: flex;
 
     flex-direction: column;
 
-    gap: 12px;
-
+    gap: 13px;
 }
 
-
 .card {
-
     overflow: hidden;
 
     background: #090909;
 
     border: 1px solid #282828;
 
-    transition: .25s;
-
+    transition:
+        .25s;
 }
 
-
 .card:hover {
-
     border-color: rgba(183,255,0,.5);
 
-    transform:
-        translateX(3px);
+    transform: translateX(3px);
 
     box-shadow:
         -4px 0 0 var(--verde);
 }
 
-
 summary {
-
     display: flex;
 
     align-items: center;
 
-    min-height: 78px;
+    min-height: 82px;
 
-    padding: 13px 18px;
+    padding: 15px 18px;
 
     cursor: pointer;
 
     list-style: none;
 
     user-select: none;
-
 }
-
 
 summary::-webkit-details-marker {
     display: none;
 }
 
-
 .numero {
-
-    width: 40px;
+    width: 42px;
 
     color: #444;
 
-    font-size: 9px;
-
+    font-size: 10px;
 }
 
-
 .icone {
-
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
 
@@ -857,93 +685,71 @@ summary::-webkit-details-marker {
 
     background: #111;
 
-    font-size: 21px;
+    font-size: 23px;
 
-    margin-right: 15px;
-
+    margin-right: 16px;
 }
 
-
 .texto-card {
-
     display: flex;
 
     flex-direction: column;
 
     flex: 1;
-
 }
-
 
 .texto-card strong {
-
-    font-size: 12px;
+    font-size: 14px;
 
     letter-spacing: 1px;
-
 }
 
-
 .texto-card small {
-
-    margin-top: 5px;
+    margin-top: 6px;
 
     color: #555;
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 2px;
-
 }
-
 
 .abrir {
-
     color: var(--verde);
 
-    font-size: 25px;
+    font-size: 28px;
 
     transition: .3s;
-
 }
 
-
 .card[open] .abrir {
-
-    transform:
-        rotate(45deg);
-
+    transform: rotate(45deg);
 }
 
 
 /* =====================================
-   CORES DOS CARDS
+   CORES
 ===================================== */
 
 .enem summary {
     border-left: 4px solid #78a8ff;
 }
 
-
 .faculdade summary {
     border-left: 4px solid var(--verde);
 }
-
 
 .tempo summary {
     border-left: 4px solid #c9c9c9;
 }
 
-
 .dinheiro summary {
     border-left: 4px solid #d5b65c;
 }
 
-
 .planos summary {
     border-left: 4px solid #9cff00;
 }
-
 
 .curriculo summary {
     border-left: 4px solid white;
@@ -955,69 +761,53 @@ summary::-webkit-details-marker {
 ===================================== */
 
 .conteudo {
-
-    padding: 25px 30px 30px;
+    padding: 28px 30px 32px;
 
     border-top: 1px solid #222;
 
     background:
-
         radial-gradient(
             circle at 90% 10%,
             rgba(183,255,0,.04),
             transparent 30%
         ),
-
         #070707;
-
 }
 
-
 .terminal {
+    padding: 21px;
 
-    padding: 20px;
-
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
     border-left: 2px solid var(--verde);
 
     background: #0c0c0c;
-
 }
-
 
 .terminal span {
-
     color: var(--verde);
 
-    font-size: 8px;
+    font-size: 9px;
 
     letter-spacing: 2px;
-
 }
 
-
 .terminal h3 {
-
-    margin: 9px 0;
+    margin: 10px 0;
 
     font-family: 'Bebas Neue';
 
-    font-size: 25px;
+    font-size: 28px;
 
     letter-spacing: 1px;
-
 }
 
-
 .terminal p {
-
     color: #888;
 
-    font-size: 10px;
+    font-size: 11px;
 
     line-height: 1.8;
-
 }
 
 
@@ -1026,20 +816,16 @@ summary::-webkit-details-marker {
 ===================================== */
 
 .lista {
-
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 8px;
-
+    gap: 9px;
 }
 
-
 .lista div {
-
-    padding: 12px;
+    padding: 13px;
 
     color: #888;
 
@@ -1047,17 +833,15 @@ summary::-webkit-details-marker {
 
     border: 1px solid #1e1e1e;
 
-    font-size: 9px;
+    font-size: 10px;
 
+    line-height: 1.5;
 }
 
-
 .lista b {
-
     margin-right: 7px;
 
     color: var(--verde);
-
 }
 
 
@@ -1066,100 +850,134 @@ summary::-webkit-details-marker {
 ===================================== */
 
 .objetivo {
+    margin-top: 20px;
 
-    margin-top: 18px;
-
-    padding: 17px;
+    padding: 18px;
 
     text-align: center;
 
     background: #0d0d0d;
 
     border: 1px solid rgba(183,255,0,.25);
-
 }
-
 
 .objetivo span {
-
     display: block;
 
     color: #555;
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 2px;
-
 }
-
 
 .objetivo strong {
-
-    display: block;
-
-    margin-top: 7px;
-
-    color: var(--verde);
-
-    font-size: 10px;
-
-}
-
-
-/* =====================================
-   FINANCEIRO
-===================================== */
-
-.financeiro {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
-}
-
-
-.financeiro div {
-
-    padding: 17px 10px;
-
-    text-align: center;
-
-    background: #0c0c0c;
-
-    border: 1px solid #292929;
-
-}
-
-
-.financeiro span {
-
-    display: block;
-
-    color: #555;
-
-    font-size: 7px;
-
-    letter-spacing: 1px;
-
-}
-
-
-.financeiro strong {
-
     display: block;
 
     margin-top: 8px;
 
     color: var(--verde);
 
+    font-size: 12px;
+}
+
+
+/* =====================================
+   FINANÇAS
+===================================== */
+
+.financeiro {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.financeiro div,
+.financeiro-extra div {
+    padding: 18px 12px;
+
+    text-align: center;
+
+    background: #0c0c0c;
+
+    border: 1px solid #292929;
+}
+
+.financeiro span,
+.financeiro-extra span {
+    display: block;
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.financeiro strong,
+.financeiro-extra strong {
+    display: block;
+
+    margin-top: 9px;
+
+    color: var(--verde);
+
     font-family: 'Bebas Neue';
 
-    font-size: 20px;
+    font-size: 23px;
+}
 
+.financeiro-extra {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.progresso-financeiro {
+    margin-top: 20px;
+}
+
+.progresso-topo {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #666;
+
+    font-size: 8px;
+}
+
+.progresso-topo strong {
+    color: var(--verde);
+}
+
+.barra-financeira {
+    width: 100%;
+    height: 7px;
+
+    margin-top: 8px;
+
+    background: #222;
+}
+
+.barra-financeira span {
+    display: block;
+
+    width: 7.5%;
+    height: 100%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 10px var(--verde);
 }
 
 
@@ -1168,80 +986,64 @@ summary::-webkit-details-marker {
 ===================================== */
 
 .sonhos {
-
     display: flex;
 
     flex-direction: column;
 
-    gap: 9px;
-
+    gap: 10px;
 }
 
-
 .sonho {
-
     display: flex;
 
     align-items: center;
 
     gap: 15px;
 
-    padding: 15px;
+    padding: 17px;
 
     background: #0c0c0c;
 
     border: 1px solid #252525;
-
 }
-
 
 .sonho > span {
-
-    font-size: 25px;
-
+    font-size: 28px;
 }
 
-
 .sonho div {
-
     display: flex;
 
     flex-direction: column;
-
 }
-
 
 .sonho strong {
-
-    font-size: 9px;
+    font-size: 11px;
 
     letter-spacing: 1px;
-
 }
 
-
 .sonho small {
-
-    margin-top: 4px;
+    margin-top: 5px;
 
     color: #666;
 
-    font-size: 8px;
+    font-size: 9px;
 
+    line-height: 1.5;
 }
 
 
 /* =====================================
-   CURRÍCULO
+   BOTÃO CURRÍCULO
 ===================================== */
 
 .botao-curriculo {
-
     display: block;
 
     margin: 20px auto 0;
 
-    padding: 14px 25px;
+    padding: 15px 27px;
 
     color: #050505;
 
@@ -1251,7 +1053,7 @@ summary::-webkit-details-marker {
 
     font-family: 'Orbitron';
 
-    font-size: 9px;
+    font-size: 10px;
 
     font-weight: 900;
 
@@ -1263,18 +1065,319 @@ summary::-webkit-details-marker {
         0 0 15px rgba(183,255,0,.15);
 
     transition: .2s;
-
 }
 
-
 .botao-curriculo:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 0 25px rgba(183,255,0,.4);
+}
 
+.botao-curriculo:active {
+    transform: scale(.96);
+}
+
+
+/* =====================================
+   CURRÍCULO
+===================================== */
+
+.curriculo-completo {
+    display: none;
+
+    margin-top: 25px;
+}
+
+.curriculo-completo.ativo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    animation:
+        abrirCurriculo .4s ease;
+}
+
+.curriculo-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 23px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #292929;
+}
+
+.curriculo-tag {
+    color: var(--verde);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.curriculo-header h3 {
+    margin-top: 8px;
+
+    font-family: 'Bebas Neue';
+
+    font-size: 40px;
+
+    letter-spacing: 3px;
+}
+
+.curriculo-header p {
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+.curriculo-status {
+    color: var(--verde);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.curriculo-status span {
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 10px var(--verde);
+}
+
+.curriculo-secao {
+    padding: 22px;
+
+    background: #0a0a0a;
+
+    border: 1px solid #222;
+}
+
+.secao-titulo {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: var(--verde);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.curriculo-secao > p {
+    margin-top: 9px;
+
+    color: #888;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+.experiencia {
+    margin-top: 11px;
+
+    padding: 17px;
+
+    background: #0d0d0d;
+
+    border-left: 2px solid var(--verde);
+}
+
+.experiencia strong {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+.experiencia small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+.experiencia p {
+    margin-top: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+.habilidades {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.habilidades span {
+    padding: 10px 13px;
+
+    color: var(--verde);
+
+    background: #0d0d0d;
+
+    border: 1px solid rgba(183,255,0,.25);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    transition: .2s;
+}
+
+.habilidades span:hover {
+    background: var(--verde);
+
+    color: #050505;
+
+    transform: translateY(-2px);
+}
+
+.carreira {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.carreira div {
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 17px;
+
+    background: #0d0d0d;
+
+    border: 1px solid #222;
+}
+
+.carreira b {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+.carreira strong {
+    margin-top: 7px;
+
+    color: var(--verde);
+
+    font-size: 11px;
+}
+
+.carreira small {
+    margin-top: 9px;
+
+    color: #777;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+.curriculo-final {
+    padding: 27px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,255,0,.08),
+            transparent 70%
+        ),
+        #0b0b0b;
+
+    border: 1px solid rgba(183,255,0,.3);
+}
+
+.curriculo-final span {
+    display: block;
+
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.curriculo-final strong {
+    display: block;
+
+    margin-top: 9px;
+
+    color: var(--verde);
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.curriculo-final small {
+    display: block;
+
+    margin-top: 11px;
+
+    color: #444;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+@keyframes abrirCurriculo {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
 }
 
 
@@ -1283,16 +1386,12 @@ summary::-webkit-details-marker {
 ===================================== */
 
 footer {
-
-    margin-top: 30px;
+    margin-top: 32px;
 
     text-align: center;
-
 }
 
-
 .linha-footer {
-
     width: 100%;
 
     height: 1px;
@@ -1306,338 +1405,65 @@ footer {
             var(--verde),
             transparent
         );
-
 }
-
 
 footer p {
-
     color: #666;
 
-    font-size: 8px;
+    font-size: 9px;
 
     letter-spacing: 3px;
-
 }
-
 
 footer p span {
-
     color: var(--verde);
-
 }
 
-
 footer small {
-
     display: block;
 
     margin-top: 9px;
 
-    color: #333;
+    color: #444;
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 2px;
-
 }
 
 
 /* =====================================
-   DETALHES
-===================================== */
-
-.canto {
-
-    position: fixed;
-
-    color: var(--verde);
-
-    opacity: .5;
-
-    font-size: 25px;
-
-    animation:
-        pulsar 2s infinite alternate;
-
-}
-
-
-.canto1 {
-
-    top: 45%;
-
-    left: 2%;
-
-}
-
-
-.canto2 {
-
-    right: 2%;
-
-    top: 30%;
-
-}
-
-
-/* =====================================
-   ANIMAÇÕES
-===================================== */
-
-@keyframes pulsar {
-
-    0% {
-        opacity: .35;
-        transform: scale(.9);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-
-}
-
-
-/* =====================================
-   CELULAR
-===================================== */
-
-@media (max-width: 700px) {
-
-    body {
-
-        padding:
-            15px 10px 40px;
-
-    }
-
-
-    .topo {
-
-        padding:
-            5px 3px 18px;
-
-    }
-
-
-    .logo-venom {
-
-        font-size: 34px;
-
-    }
-
-
-    .status {
-
-        font-size: 7px;
-
-    }
-
-
-    .game-container {
-
-        padding: 12px;
-
-    }
-
-
-    .perfil {
-
-        padding: 15px;
-
-    }
-
-
-    .foto-container {
-
-        width: 85px;
-        height: 85px;
-
-    }
-
-
-    .perfil-info h1 {
-
-        font-size: 35px;
-
-    }
-
-
-    .perfil-info p {
-
-        font-size: 7px;
-
-    }
-
-
-    .nivel {
-
-        display: none;
-
-    }
-
-
-    .introducao h2 {
-
-        font-size: 28px;
-
-    }
-
-
-    .lista {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .financeiro {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    summary {
-
-        padding: 12px;
-
-    }
-
-
-    .numero {
-
-        width: 25px;
-
-        font-size: 7px;
-
-    }
-
-
-    .icone {
-
-        width: 40px;
-        height: 40px;
-
-        margin-right: 10px;
-
-        font-size: 18px;
-
-    }
-
-
-    .texto-card strong {
-
-        font-size: 9px;
-
-    }
-
-
-    .texto-card small {
-
-        font-size: 6px;
-
-    }
-
-
-    .conteudo {
-
-        padding: 18px;
-
-    }
-
-
-    .gosma2,
-    .tentaculo2 {
-
-        display: none;
-
-    }
-
-}
-/* =====================================
-   ANIMAÇÃO DOS CONTEÚDOS
-===================================== */
-
-@keyframes entradaConteudo {
-
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =====================================
-   EFEITO DO PERFIL
-===================================== */
-
-.perfil {
-    transition: transform .15s ease, border-color .25s ease;
-}
-
-
-/* =====================================
-   MELHORIA DOS CARDS
-===================================== */
-
-.card {
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-}
-
-
-.card[open] {
-    border-color: rgba(183, 255, 0, .35);
-}
-
-
-/* =====================================
-   BOTÃO CURRÍCULO
-===================================== */
-
-.botao-curriculo:active {
-    transform: scale(.96);
-}
-/* =====================================
-   LIFE SYSTEM
+   PAINEL LIFE SYSTEM
 ===================================== */
 
 .life-system {
     position: fixed;
+
     right: 25px;
     bottom: 25px;
+
     z-index: 1000;
-    font-family: 'Orbitron', sans-serif;
 }
-
-
-/* BOTÃO */
 
 .life-toggle {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 
-    padding: 12px 16px;
+    padding: 13px 17px;
 
     color: var(--verde);
+
     background: #080808;
 
     border: 1px solid rgba(183,255,0,.45);
 
-    font-family: 'Orbitron', sans-serif;
-    font-size: 8px;
+    font-family: 'Orbitron';
+
+    font-size: 9px;
+
     letter-spacing: 1px;
 
     cursor: pointer;
@@ -1648,9 +1474,9 @@ footer small {
     transition: .25s;
 }
 
-
 .life-toggle:hover {
     background: var(--verde);
+
     color: #050505;
 
     transform: translateY(-3px);
@@ -1659,18 +1485,15 @@ footer small {
         0 0 30px rgba(183,255,0,.35);
 }
 
-
-/* PAINEL */
-
 .life-panel {
     position: absolute;
 
     right: 0;
     bottom: 0;
 
-    width: 310px;
+    width: 320px;
 
-    padding: 25px;
+    padding: 27px;
 
     background:
         linear-gradient(
@@ -1683,10 +1506,10 @@ footer small {
 
     box-shadow:
         0 0 0 1px rgba(183,255,0,.05),
-        0 20px 70px rgba(0,0,0,.9),
-        0 0 35px rgba(183,255,0,.08);
+        0 20px 70px rgba(0,0,0,.9);
 
     opacity: 0;
+
     visibility: hidden;
 
     transform:
@@ -1694,25 +1517,20 @@ footer small {
         scale(.95);
 
     transition:
-        opacity .3s ease,
-        transform .3s ease,
+        opacity .3s,
+        transform .3s,
         visibility .3s;
 }
 
-
-/* PAINEL ABERTO */
-
 .life-panel.ativo {
     opacity: 1;
+
     visibility: visible;
 
     transform:
         translateY(0)
         scale(1);
 }
-
-
-/* BOTÃO FECHAR */
 
 .life-close {
     position: absolute;
@@ -1721,17 +1539,15 @@ footer small {
     right: 12px;
 
     color: #666;
+
     background: none;
 
     border: none;
 
-    font-size: 22px;
+    font-size: 25px;
 
     cursor: pointer;
-
-    transition: .2s;
 }
-
 
 .life-close:hover {
     color: var(--verde);
@@ -1739,45 +1555,39 @@ footer small {
     transform: rotate(90deg);
 }
 
-
-/* TEXTOS */
-
 .life-mini {
     color: var(--verde);
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 2px;
 }
 
-
 .life-panel h2 {
-    margin-top: 7px;
+    margin-top: 8px;
 
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Bebas Neue';
 
-    font-size: 38px;
+    font-size: 42px;
 
     letter-spacing: 4px;
 }
 
-
 .system-status {
-    margin-top: 3px;
+    margin-top: 4px;
 
     color: #777;
 
-    font-size: 7px;
+    font-size: 8px;
 
     letter-spacing: 1px;
 }
 
-
 .system-status span {
     display: inline-block;
 
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
 
     margin-right: 5px;
 
@@ -1792,11 +1602,9 @@ footer small {
         pulsar 1.5s infinite alternate;
 }
 
-
-/* LINHA */
-
 .system-line {
     width: 100%;
+
     height: 1px;
 
     margin: 18px 0;
@@ -1809,9 +1617,6 @@ footer small {
         );
 }
 
-
-/* INFORMAÇÕES */
-
 .life-info {
     display: grid;
 
@@ -1821,74 +1626,65 @@ footer small {
     gap: 8px;
 }
 
-
 .life-info div {
-    padding: 12px;
+    padding: 13px;
 
     background: #0c0c0c;
 
     border: 1px solid #222;
 }
 
-
 .life-info span {
     display: block;
 
     color: #555;
 
-    font-size: 6px;
+    font-size: 7px;
 
     letter-spacing: 2px;
 }
 
-
 .life-info strong {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
     color: var(--verde);
 
-    font-size: 9px;
+    font-size: 10px;
 }
-
-
-/* PROGRESSO */
 
 .progress-title {
     display: flex;
 
     justify-content: space-between;
 
-    margin-top: 18px;
+    margin-top: 19px;
 
     color: #666;
 
-    font-size: 7px;
-
-    letter-spacing: 1px;
+    font-size: 8px;
 }
-
 
 .progress-title strong {
     color: var(--verde);
 }
 
-
 .progress-bar {
     width: 100%;
-    height: 5px;
 
-    margin-top: 7px;
+    height: 6px;
+
+    margin-top: 8px;
 
     background: #222;
 }
-
 
 .progress-bar span {
     display: block;
 
     width: 76%;
+
     height: 100%;
 
     background: var(--verde);
@@ -1900,20 +1696,16 @@ footer small {
         carregar 1.5s ease;
 }
 
-
-/* MISSÕES */
-
 .life-missions {
     display: grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 7px;
+    gap: 8px;
 
-    margin-top: 18px;
+    margin-top: 19px;
 }
-
 
 .mission-btn {
     display: flex;
@@ -1922,7 +1714,7 @@ footer small {
 
     gap: 7px;
 
-    padding: 10px;
+    padding: 11px;
 
     color: #777;
 
@@ -1932,13 +1724,12 @@ footer small {
 
     font-family: 'Orbitron';
 
-    font-size: 7px;
+    font-size: 8px;
 
     cursor: pointer;
 
     transition: .2s;
 }
-
 
 .mission-btn:hover {
     color: var(--verde);
@@ -1950,13 +1741,10 @@ footer small {
         translateY(-2px);
 }
 
-
-/* MENSAGEM */
-
 .system-message {
-    margin-top: 18px;
+    margin-top: 19px;
 
-    padding: 13px;
+    padding: 14px;
 
     background: #0c0c0c;
 
@@ -1964,28 +1752,73 @@ footer small {
         2px solid var(--verde);
 }
 
-
 .system-message span {
     color: var(--verde);
 
-    font-size: 6px;
+    font-size: 7px;
 
     letter-spacing: 1px;
 }
 
-
 .system-message p {
-    margin-top: 7px;
+    margin-top: 8px;
 
     color: #777;
 
-    font-size: 8px;
+    font-size: 9px;
 
     line-height: 1.6;
 }
 
 
-/* ANIMAÇÃO */
+/* =====================================
+   DETALHES
+===================================== */
+
+.canto {
+    position: fixed;
+
+    color: var(--verde);
+
+    opacity: .5;
+
+    font-size: 27px;
+
+    animation:
+        pulsar 2s infinite alternate;
+}
+
+.canto1 {
+    top: 45%;
+    left: 2%;
+}
+
+.canto2 {
+    right: 2%;
+    top: 30%;
+}
+
+
+/* =====================================
+   ANIMAÇÕES
+===================================== */
+
+@keyframes pulsar {
+
+    0% {
+        opacity: .35;
+
+        transform:
+            scale(.9);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1.1);
+    }
+}
 
 @keyframes carregar {
 
@@ -1996,13 +1829,157 @@ footer small {
     to {
         width: 76%;
     }
-
 }
 
 
-/* CELULAR */
+/* =====================================
+   CELULAR
+===================================== */
 
 @media (max-width: 700px) {
+
+    body {
+        padding:
+            15px 10px 80px;
+    }
+
+    .topo {
+        padding:
+            5px 3px 18px;
+    }
+
+    .logo-venom {
+        font-size: 38px;
+    }
+
+    .status {
+        font-size: 7px;
+    }
+
+    .game-container {
+        padding: 14px;
+    }
+
+    .perfil {
+        padding: 16px;
+
+        gap: 13px;
+    }
+
+    .foto-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .perfil-info h1 {
+        font-size: 38px;
+    }
+
+    .perfil-info p {
+        font-size: 8px;
+    }
+
+    .perfil-info small {
+        font-size: 7px;
+    }
+
+    .nivel {
+        display: none;
+    }
+
+    .introducao {
+        margin: 28px 0 20px;
+    }
+
+    .simbolo {
+        width: 45px;
+        height: 45px;
+        font-size: 21px;
+    }
+
+    .introducao h2 {
+        font-size: 30px;
+    }
+
+    .introducao p {
+        font-size: 9px;
+    }
+
+    summary {
+        padding: 13px 11px;
+    }
+
+    .numero {
+        width: 25px;
+        font-size: 8px;
+    }
+
+    .icone {
+        width: 42px;
+        height: 42px;
+
+        margin-right: 10px;
+
+        font-size: 19px;
+    }
+
+    .texto-card strong {
+        font-size: 10px;
+    }
+
+    .texto-card small {
+        font-size: 6px;
+    }
+
+    .abrir {
+        font-size: 24px;
+    }
+
+    .conteudo {
+        padding: 19px 15px 22px;
+    }
+
+    .lista {
+        grid-template-columns: 1fr;
+    }
+
+    .financeiro {
+        grid-template-columns: 1fr;
+    }
+
+    .financeiro-extra {
+        grid-template-columns: 1fr;
+    }
+
+    .carreira {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculo-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .curriculo-header h3 {
+        font-size: 35px;
+    }
+
+    .curriculo-header p {
+        font-size: 8px;
+
+        line-height: 1.5;
+    }
+
+    .curriculo-secao {
+        padding: 17px;
+    }
+
+    .curriculo-secao > p {
+        font-size: 10px;
+    }
 
     .life-system {
         right: 12px;
@@ -2010,163 +1987,20 @@ footer small {
     }
 
     .life-panel {
-        width: min(
-            310px,
-            calc(100vw - 24px)
-        );
+        width:
+            min(
+                320px,
+                calc(100vw - 24px)
+            );
     }
 
     .life-toggle span {
         display: none;
     }
 
-}
-/* =====================================
-   CURRÍCULO - ABRIR / FECHAR
-===================================== */
-
-.curriculo-completo {
-    display: none;
-    margin-top: 25px;
-}
-
-.curriculo-completo.ativo {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    animation: abrirCurriculo .4s ease;
-}
-
-@keyframes abrirCurriculo {
-    from {
-        opacity: 0;
-        transform: translateY(-12px);
+    .gosma2,
+    .tentaculo2,
+    .canto {
+        display: none;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* =====================================
-   LETRAS MAIORES
-===================================== */
-
-.texto-card strong {
-    font-size: 13px;
-}
-
-.texto-card small {
-    font-size: 8px;
-}
-
-.perfil-info p {
-    font-size: 11px;
-}
-
-.perfil-info small {
-    font-size: 8px;
-}
-
-.mini-titulo {
-    font-size: 8px;
-}
-
-.introducao p {
-    font-size: 10px;
-}
-
-.terminal span {
-    font-size: 9px;
-}
-
-.terminal p {
-    font-size: 11px;
-    line-height: 1.8;
-}
-
-.lista div {
-    font-size: 10px;
-}
-
-.objetivo span {
-    font-size: 8px;
-}
-
-.objetivo strong {
-    font-size: 11px;
-}
-
-.sonho strong {
-    font-size: 10px;
-}
-
-.sonho small {
-    font-size: 9px;
-}
-
-footer p {
-    font-size: 9px;
-}
-
-footer small {
-    font-size: 8px;
-}
-
-
-/* =====================================
-   CURRÍCULO
-===================================== */
-
-.curriculo-secao > p {
-    font-size: 11px;
-}
-
-.experiencia strong {
-    font-size: 10px;
-}
-
-.experiencia small {
-    font-size: 8px;
-}
-
-.experiencia p {
-    font-size: 10px;
-    line-height: 1.8;
-}
-
-.secao-titulo {
-    font-size: 9px;
-}
-
-.habilidades span {
-    font-size: 8px;
-}
-
-.carreira b {
-    font-size: 8px;
-}
-
-.carreira strong {
-    font-size: 11px;
-}
-
-.carreira small {
-    font-size: 9px;
-    line-height: 1.7;
-}
-
-.curriculo-final span {
-    font-size: 8px;
-}
-
-.curriculo-final strong {
-    font-size: 12px;
-}
-
-.curriculo-final small {
-    font-size: 8px;
 }
