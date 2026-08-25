@@ -1609,3 +1609,415 @@ footer small {
 .botao-curriculo:active {
     transform: scale(.96);
 }
+/* =====================================
+   LIFE SYSTEM
+===================================== */
+
+.life-system {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1000;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* BOTÃO */
+
+.life-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 16px;
+
+    color: var(--verde);
+    background: #080808;
+
+    border: 1px solid rgba(183,255,0,.45);
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(183,255,0,.12);
+
+    transition: .25s;
+}
+
+
+.life-toggle:hover {
+    background: var(--verde);
+    color: #050505;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(183,255,0,.35);
+}
+
+
+/* PAINEL */
+
+.life-panel {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 310px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #050505
+        );
+
+    border: 1px solid rgba(183,255,0,.45);
+
+    box-shadow:
+        0 0 0 1px rgba(183,255,0,.05),
+        0 20px 70px rgba(0,0,0,.9),
+        0 0 35px rgba(183,255,0,.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(20px)
+        scale(.95);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s;
+}
+
+
+/* PAINEL ABERTO */
+
+.life-panel.ativo {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* BOTÃO FECHAR */
+
+.life-close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    color: #666;
+    background: none;
+
+    border: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.life-close:hover {
+    color: var(--verde);
+
+    transform: rotate(90deg);
+}
+
+
+/* TEXTOS */
+
+.life-mini {
+    color: var(--verde);
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+.life-panel h2 {
+    margin-top: 7px;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 38px;
+
+    letter-spacing: 4px;
+}
+
+
+.system-status {
+    margin-top: 3px;
+
+    color: #777;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.system-status span {
+    display: inline-block;
+
+    width: 6px;
+    height: 6px;
+
+    margin-right: 5px;
+
+    border-radius: 50%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 10px var(--verde);
+
+    animation:
+        pulsar 1.5s infinite alternate;
+}
+
+
+/* LINHA */
+
+.system-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 18px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--verde),
+            transparent
+        );
+}
+
+
+/* INFORMAÇÕES */
+
+.life-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 8px;
+}
+
+
+.life-info div {
+    padding: 12px;
+
+    background: #0c0c0c;
+
+    border: 1px solid #222;
+}
+
+
+.life-info span {
+    display: block;
+
+    color: #555;
+
+    font-size: 6px;
+
+    letter-spacing: 2px;
+}
+
+
+.life-info strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--verde);
+
+    font-size: 9px;
+}
+
+
+/* PROGRESSO */
+
+.progress-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.progress-title strong {
+    color: var(--verde);
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+
+    margin-top: 7px;
+
+    background: #222;
+}
+
+
+.progress-bar span {
+    display: block;
+
+    width: 76%;
+    height: 100%;
+
+    background: var(--verde);
+
+    box-shadow:
+        0 0 12px var(--verde);
+
+    animation:
+        carregar 1.5s ease;
+}
+
+
+/* MISSÕES */
+
+.life-missions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 7px;
+
+    margin-top: 18px;
+}
+
+
+.mission-btn {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    color: #777;
+
+    background: #0b0b0b;
+
+    border: 1px solid #222;
+
+    font-family: 'Orbitron';
+
+    font-size: 7px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.mission-btn:hover {
+    color: var(--verde);
+
+    border-color:
+        rgba(183,255,0,.4);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* MENSAGEM */
+
+.system-message {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    background: #0c0c0c;
+
+    border-left:
+        2px solid var(--verde);
+}
+
+
+.system-message span {
+    color: var(--verde);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+.system-message p {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+
+/* ANIMAÇÃO */
+
+@keyframes carregar {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 76%;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+    .life-system {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .life-panel {
+        width: min(
+            310px,
+            calc(100vw - 24px)
+        );
+    }
+
+    .life-toggle span {
+        display: none;
+    }
+
+}
