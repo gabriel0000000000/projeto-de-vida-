@@ -239,3 +239,45 @@ missionButtons.forEach(button => {
     });
 
 });
+// ==========================================
+// CURRÍCULO - ABRIR DENTRO DO SITE
+// ==========================================
+
+const botaoCurriculo = document.getElementById("botaoCurriculo");
+const curriculoCompleto = document.getElementById("curriculoCompleto");
+
+if (botaoCurriculo && curriculoCompleto) {
+
+    botaoCurriculo.addEventListener("click", () => {
+
+        const aberto =
+            curriculoCompleto.classList.contains("ativo");
+
+        if (aberto) {
+
+            curriculoCompleto.classList.remove("ativo");
+
+            botaoCurriculo.innerHTML =
+                "📄 ABRIR CURRÍCULO";
+
+        } else {
+
+            curriculoCompleto.classList.add("ativo");
+
+            botaoCurriculo.innerHTML =
+                "📄 FECHAR CURRÍCULO";
+
+            setTimeout(() => {
+
+                curriculoCompleto.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+
+            }, 100);
+
+        }
+
+    });
+
+}
